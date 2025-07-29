@@ -1,6 +1,6 @@
 ---
 project: nprogress
-stars: 26356
+stars: 26354
 description: |-
     For slim progress bars like on YouTube, Medium, etc
 url: https://github.com/rstacruz/nprogress
