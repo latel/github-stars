@@ -1,6 +1,8 @@
 import process from 'node:process'
 import fs from 'fs-extra'
 import { $fetch } from 'ofetch'
+import pLimit from 'p-limit'
+import 'dotenv/config'
 
 if (!process.env.GITHUB_TOKEN) {
   throw new Error('GITHUB_TOKEN is not set')
@@ -67,15 +69,24 @@ async function main() {
   try {
     fs.removeSync('stars')
     const repos = await getStaredRepos()
-    for (const repo of repos) {
-      try {
-        const readme = await getReadMe(repo)
-        saveReadMe(repo, readme)
-      }
-      catch (e) {
-        console.error(`Error getting readme for ${repo.full_name}: ${e}`)
-      }
-    }
+
+    // 创建并发限制器，最多同时10个请求
+    const limit = pLimit(10)
+
+    // 使用 Promise.all 和 limit 来控制并发
+    await Promise.all(repos.map(repo =>
+      limit(async () => {
+        try {
+          const readme = await getReadMe(repo)
+          saveReadMe(repo, readme)
+        }
+        catch (e) {
+          console.error(`Error getting readme for ${repo.full_name}: ${e}`)
+        }
+      }),
+    ))
+
+    console.log('All repos processed successfully!')
   }
   catch (e) {
     console.error(`Error: ${e}`, e?.response, e?.response?.headers)

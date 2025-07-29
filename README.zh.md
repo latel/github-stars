@@ -37,13 +37,11 @@
 
 1. 克隆此仓库
 2. 设置 Cloudflare R2：
-
    - 创建一个 R2 存储桶
    - 配置 R2 访问凭证
 
 3. 为 CI/CD 工作流配置 GitHub Secrets：
-
-   - `GH_TOKEN`：用于获取标星仓库的 GitHub 令牌
+   - `GITHUB_TOKEN`：用于获取标星仓库的 GitHub 令牌
    - `R2_ACCOUNT_ID`：Cloudflare 账户 ID
    - `R2_ACCESS_KEY_ID`：R2 访问密钥
    - `R2_SECRET_ACCESS_KEY`：R2 密钥
