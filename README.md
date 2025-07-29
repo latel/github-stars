@@ -37,13 +37,11 @@ This project creates a searchable database of your GitHub starred repositories b
 
 1. Clone this repository
 2. Set up Cloudflare R2:
-
    - Create a R2 bucket
    - Configure R2 access credentials
 
 3. Configure GitHub Secrets for the CI/CD workflow:
-
-   - `GH_TOKEN`: GitHub token for fetching starred repositories
+   - `GITHUB_TOKEN`: GitHub token for fetching starred repositories
    - `R2_ACCOUNT_ID`: Cloudflare account ID
    - `R2_ACCESS_KEY_ID`: R2 access key
    - `R2_SECRET_ACCESS_KEY`: R2 secret key
