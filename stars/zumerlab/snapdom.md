@@ -1,16 +1,14 @@
 ---
 project: snapdom
-stars: 3766
+stars: 4326
 description: |-
     snapDOM captures HTML elements to images with exceptional speed and accuracy.
 url: https://github.com/zumerlab/snapdom
 ---
 
-# snapDOM
-
 <p align="center">
   <a href="http://zumerlab.github.io/snapdom">
-    <img src="https://raw.githubusercontent.com/zumerlab/snapdom/main/docs/assets/hero.png" width="80%">
+    <img src="https://raw.githubusercontent.com/zumerlab/snapdom/main/docs/assets/newhero.png" width="70%">
   </a>
 </p>
 
@@ -36,13 +34,15 @@ url: https://github.com/zumerlab/snapdom
   </a>
 </p>
 
+# snapDOM
+
 **snapDOM** is a fast and accurate DOM-to-image capture tool built for **Zumly**, a zoom-based view transition framework.
 
 It captures any HTML element as a scalable SVG image, preserving styles, fonts, background images, pseudo-elements, and even shadow DOM. It also supports export to raster image formats and canvas.
 
 * 📸 Full DOM capture
 * 🎨 Embedded styles, pseudo-elements, and fonts
-* 🖼️ Export to SVG, PNG, JPG, WebP, or `canvas`
+* 🖼️ Export to SVG, PNG, JPG, WebP, `canvas`, or Blob
 * ⚡ Ultra fast, no dependencies
 * 📦 100% based on standard Web APIs
 
@@ -60,6 +60,12 @@ npm i @zumer/snapdom
 
 ```sh
 yarn add @zumer/snapdom
+```
+
+Then import it in your code:
+
+```js
+import { snapdom } from '@zumer/snapdom';
 ```
 
 ### CDN
@@ -320,6 +326,36 @@ npm install
 npm run test:benchmark
 ```
 
+
+## Roadmap
+
+Planned improvements for future versions of SnapDOM:
+
+* [ ] **Implement plugin system**
+  SnapDOM will support external plugins to extend or override internal behavior (e.g. custom node transformers, exporters, or filters).
+
+* [ ] **Refactor to modular architecture**
+  Internal logic will be split into smaller, focused modules to improve maintainability and code reuse.
+
+* [ ] **Decouple internal logic from global options**
+  Functions will be redesigned to avoid relying directly on `options`. A centralized capture context will improve clarity, autonomy, and testability.
+
+* [ ] **Expose cache control**
+  Users will be able to manually clear image and font caches or configure their own caching strategies.
+
+* [ ] **Auto font preloading**
+  Required fonts will be automatically detected and preloaded before capture, reducing the need for manual `preCache()` calls.
+
+* [ ] **Document plugin development**
+  A full guide will be provided for creating and registering custom SnapDOM plugins.
+
+* [ ] **Make export utilities tree-shakeable**
+  Export functions like `toPng`, `toJpg`, `toBlob`, etc. will be restructured into independent modules to support tree shaking and minimal builds.
+
+Have ideas or feature requests?
+Feel free to share suggestions or feedback in [GitHub Discussions](https://github.com/zumerlab/snapdom/discussions).
+
+
 ## Development
 
 To contribute or build snapDOM locally:
@@ -361,6 +397,7 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 <a href="https://github.com/tarwin" title="tarwin"><img src="https://avatars.githubusercontent.com/u/646149?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="tarwin"/></a>
 <a href="https://github.com/17biubiu" title="17biubiu"><img src="https://avatars.githubusercontent.com/u/13295895?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="17biubiu"/></a>
 <a href="https://github.com/av01d" title="av01d"><img src="https://avatars.githubusercontent.com/u/6247646?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="av01d"/></a>
+<a href="https://github.com/CHOYSEN" title="CHOYSEN"><img src="https://avatars.githubusercontent.com/u/25995358?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="CHOYSEN"/></a>
 <a href="https://github.com/pedrocateexte" title="pedrocateexte"><img src="https://avatars.githubusercontent.com/u/207524750?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="pedrocateexte"/></a>
 <a href="https://github.com/domialex" title="domialex"><img src="https://avatars.githubusercontent.com/u/4694217?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="domialex"/></a>
 <a href="https://github.com/elliots" title="elliots"><img src="https://avatars.githubusercontent.com/u/622455?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="elliots"/></a>
@@ -372,6 +409,7 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 <a href="https://github.com/miusuncle" title="miusuncle"><img src="https://avatars.githubusercontent.com/u/7549857?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="miusuncle"/></a>
 <a href="https://github.com/rbbydotdev" title="rbbydotdev"><img src="https://avatars.githubusercontent.com/u/101137670?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="rbbydotdev"/></a>
 <a href="https://github.com/kohaiy" title="kohaiy"><img src="https://avatars.githubusercontent.com/u/15622127?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="kohaiy"/></a>
+<a href="https://github.com/fu050409" title="fu050409"><img src="https://avatars.githubusercontent.com/u/46275354?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="fu050409"/></a>
 </p>
 <!-- CONTRIBUTORS:END -->
 

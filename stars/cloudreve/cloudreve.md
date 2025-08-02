@@ -1,6 +1,6 @@
 ---
 project: cloudreve
-stars: 24265
+stars: 24380
 description: |-
     🌩 Self-hosted file management and sharing system, supports multiple storage providers
 url: https://github.com/cloudreve/cloudreve
@@ -15,7 +15,7 @@ url: https://github.com/cloudreve/cloudreve
   Cloudreve
   <br>
 </h1>
-<h4 align="center">Self-hosted file management system with muilt-cloud support.</h4>
+<h4 align="center">Self-hosted file management system with multi-cloud support.</h4>
 
 <p align="center">
   <a href="https://dev.azure.com/abslantliu/Cloudreve/_build?definitionId=6">
@@ -51,13 +51,13 @@ url: https://github.com/cloudreve/cloudreve
 - 💾 Integrate with Aria2/qBittorrent to download files in background, use multiple download nodes to share the load.
 - 📚 Compress/Extract files, download files in batch.
 - 💻 WebDAV support covering all storage providers.
-- :zap:Drag&Drop to upload files or folders, with resumeable upload support.
+- :zap:Drag&Drop to upload files or folders, with resumable upload support.
 - :card_file_box: Extract media metadata from files, search files by metadata or tags.
 - :family_woman_girl_boy: Multi-users with multi-groups.
 - :link: Create share links for files and folders with expiration date.
 - :eye_speech_bubble: Preview videos, images, audios, ePub files online; edit texts, diagrams, Markdown, images, Office documents online.
 - :art: Customize theme colors, dark mode, PWA application, SPA, i18n.
-- :rocket: All-In-One packing, with all features out-of-the-box.
+- :rocket: All-in-one packaging, with all features out of the box.
 - 🌈 ... ...
 
 ## :hammer_and_wrench: Deploy
