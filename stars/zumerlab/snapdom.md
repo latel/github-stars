@@ -1,6 +1,6 @@
 ---
 project: snapdom
-stars: 4326
+stars: 4944
 description: |-
     snapDOM captures HTML elements to images with exceptional speed and accuracy.
 url: https://github.com/zumerlab/snapdom
@@ -337,8 +337,8 @@ Planned improvements for future versions of SnapDOM:
 * [ ] **Refactor to modular architecture**
   Internal logic will be split into smaller, focused modules to improve maintainability and code reuse.
 
-* [ ] **Decouple internal logic from global options**
-  Functions will be redesigned to avoid relying directly on `options`. A centralized capture context will improve clarity, autonomy, and testability.
+* [X] **Decouple internal logic from global options**
+  Functions will be redesigned to avoid relying directly on `options`. A centralized capture context will improve clarity, autonomy, and testability. See [`next` branch](https://github.com/zumerlab/snapdom/tree/main)
 
 * [ ] **Expose cache control**
   Users will be able to manually clear image and font caches or configure their own caching strategies.
@@ -408,6 +408,7 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 <a href="https://github.com/jhbae200" title="jhbae200"><img src="https://avatars.githubusercontent.com/u/20170610?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="jhbae200"/></a>
 <a href="https://github.com/miusuncle" title="miusuncle"><img src="https://avatars.githubusercontent.com/u/7549857?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="miusuncle"/></a>
 <a href="https://github.com/rbbydotdev" title="rbbydotdev"><img src="https://avatars.githubusercontent.com/u/101137670?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="rbbydotdev"/></a>
+<a href="https://github.com/zhanghaotian2018" title="zhanghaotian2018"><img src="https://avatars.githubusercontent.com/u/169218899?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="zhanghaotian2018"/></a>
 <a href="https://github.com/kohaiy" title="kohaiy"><img src="https://avatars.githubusercontent.com/u/15622127?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="kohaiy"/></a>
 <a href="https://github.com/fu050409" title="fu050409"><img src="https://avatars.githubusercontent.com/u/46275354?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="fu050409"/></a>
 </p>
@@ -418,6 +419,10 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 Special thanks to [@megaphonecolin](https://github.com/megaphonecolin) for supporting this project!
 
 If you'd like to support this project too, you can [become a sponsor](https://github.com/sponsors/tinchox5).
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=zumerlab/snapdom&type=Date)](https://www.star-history.com/#zumerlab/snapdom&Date)
 
 ## License
 

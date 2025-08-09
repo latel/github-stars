@@ -1,6 +1,6 @@
 ---
 project: browserslist
-stars: 13355
+stars: 13368
 description: |-
     🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env
 url: https://github.com/browserslist/browserslist
@@ -111,6 +111,11 @@ Browserslist needs your support. We are accepting donations
   run `update-browserslist-db` and proposes a pull request to merge updates.
 
 
+### Useful Shared Configs
+
+* [`browserslist-config-baseline`]
+
+
 ### Show “We do not support your browser” Banner
 
 * [`browserslist-useragent-regexp`] compiles Browserslist query to a RegExp
@@ -136,6 +141,7 @@ Browserslist needs your support. We are accepting donations
 
 [`browserslist-useragent-regexp`]: https://github.com/browserslist/browserslist-useragent-regexp
 [`browserslist-adobe-analytics`]:  https://github.com/xeroxinteractive/browserslist-adobe-analytics
+[`browserslist-config-baseline`]: https://github.com/web-platform-dx/browserslist-config-baseline
 [`browserslist-useragent-ruby`]:   https://github.com/browserslist/browserslist-useragent-ruby
 [`browserslist-update-action`]:    https://github.com/c2corg/browserslist-update-action
 [`browserslist-browserstack`]:     https://github.com/xeroxinteractive/browserslist-browserstack

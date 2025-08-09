@@ -1,6 +1,6 @@
 ---
 project: awesome-selfhosted
-stars: 239855
+stars: 240988
 description: |-
     A list of Free Software network services and web applications which can be hosted on your own servers
 url: https://github.com/awesome-selfhosted/awesome-selfhosted
@@ -945,6 +945,7 @@ Simplified file servers for sharing of one-time/short-lived/temporary files, pro
 - [elixire](https://gitlab.com/elixire/elixire) - Simple yet advanced screenshot uploading and link shortening service. ([Clients](https://gitlab.com/elixire/elixiremanager)) `AGPL-3.0` `Python`
 - [Enclosed](https://enclosed.cc/) - Minimalistic web application designed for sending private and secure notes. ([Demo](https://enclosed.cc/), [Source Code](https://github.com/CorentinTh/enclosed)) `Apache-2.0` `Docker/Nodejs`
 - [Files Sharing](https://github.com/axeloz/filesharing) - File sharing application based on unique and temporary links. `GPL-3.0` `PHP/Docker`
+- [Flare](https://github.com/FlintSH/Flare) - A nonbloated, modern, and highly configurable file/screenshot vault server with support for ShareX, Flameshot, and Spectacle. Offers OCR search and more. `MIT` `Docker/Nodejs`
 - [Gokapi](https://github.com/Forceu/gokapi) - Lightweight server to share files, which expire after a set amount of downloads or days. Similar to the discontinued Firefox Send, with the difference that only the admin is allowed to upload files. `GPL-3.0` `Go/Docker`
 - [goploader](https://depado.github.io/goploader/) - Easy file sharing with server-side encryption, curl/httpie/wget compliant. ([Source Code](https://github.com/Depado/goploader)) `MIT` `Go`
 - [GoSƐ](https://github.com/stv0g/gose) - Modern file-uploader focusing on scalability and simplicity. It only depends on a S3 storage backend and hence scales horizontally without the need for additional databases or caches. `Apache-2.0` `Go/Docker`
@@ -1448,6 +1449,7 @@ Software that does not fit in another section.
 - [TeslaMate](https://github.com/adriankumpf/teslamate) - A powerful data logger for Tesla vehicles. `MIT` `Elixir/Docker`
 - [Upsnap](https://github.com/seriousm4x/UpSnap) - A simple Wake on LAN (WOL) dashboard app. Wake up devices on your network and see current status. `MIT` `Go/Docker`
 - [URL-to-PNG](https://github.com/jasonraimondi/url-to-png) - URL to PNG utility featuring parallel rendering using Playwright for screenshots and with storage caching via Local, S3, or CouchDB. `MIT` `Nodejs/Docker`
+- [Usertour](https://www.usertour.io/) - User onboarding platform allowing you to create in-app product tours, checklists, and surveys in minutes effortlessly. ([Source Code](https://github.com/usertour/usertour/)) `AGPL-3.0` `Docker`
 - [Wakupator](https://github.com/Gibus21250/Wakupator) - Wake On LAN Machine Manager based on network traffic. `MIT` `C`
 - [Wavelog](https://www.wavelog.org) - Webbased Logging Software for Radio Amateurs. Enhanced QSO logging, statistics and maps for your browser. ([Demo](https://demo.wavelog.org), [Source Code](https://github.com/wavelog/wavelog)) `MIT` `PHP/Docker`
 - [WeeWX](https://weewx.com/) - Open source software for your weather station. ([Demo](https://weewx.com/showcase.html), [Source Code](https://github.com/weewx/weewx)) `GPL-3.0` `Python/deb`
@@ -1952,6 +1954,7 @@ _Related: [Ticketing](#ticketing), [Task Management & To-do Lists](#task-managem
 - [Gogs](https://gogs.io/) - Painless self-hosted Git Service written in Go. ([Source Code](https://github.com/gogs/gogs)) `MIT` `Go`
 - [Huly](https://huly.io) - All-in-one project management platform (alternative to Linear, Jira, Slack, Notion, Motion). ([Demo](https://app.huly.io), [Source Code](https://github.com/hcengineering/platform)) `EPL-2.0` `Docker/K8S/Nodejs`
 - [Kallithea](https://kallithea-scm.org/) - Source code management system that supports two leading version control systems, Mercurial and Git, with a web interface. ([Source Code](https://kallithea-scm.org/repos/kallithea)) `GPL-3.0` `Python`
+- [Kaneo](https://kaneo.app/) - Project management platform focused on simplicity and efficiency. ([Demo](https://demo.kaneo.app/), [Source Code](https://github.com/usekaneo/kaneo)) `MIT` `K8S/Docker`
 - [Leantime](https://leantime.io) - Lean project management system for small teams and startups helping to manage projects from ideation through delivery. ([Source Code](https://github.com/leantime/leantime)) `AGPL-3.0` `PHP/Docker`
 - [Mergeable](https://www.usemergeable.dev) `⚠` - A better inbox for GitHub pull requests. ([Demo](https://app.usemergeable.dev), [Source Code](https://github.com/pvcnt/mergeable)) `MIT` `Nodejs/Docker/K8S`
 - [Mindwendel](https://www.mindwendel.com/) - Brainstorm and upvote ideas and thoughts within your team. ([Demo](https://www.mindwendel.com), [Source Code](https://github.com/b310-digital/mindwendel)) `AGPL-3.0` `Docker/Elixir`
@@ -1996,7 +1999,7 @@ Tools and software for [software testing](https://en.wikipedia.org/wiki/Software
 
 [Static site generators](https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators) generate full static HTML websites based on raw data, plain text files and a set of templates. 
 
-**Please visit [staticsitegenerators.net](https://staticsitegenerators.net), [staticgen.com](https://www.staticgen.com)**
+**Please visit [staticsitegenerators.bevry.me](https://staticsitegenerators.bevry.me), [staticgen.com](https://www.staticgen.com)**
 
 _Related: [Blogging Platforms](#blogging-platforms), [Photo Galleries](#photo-galleries), [Content Management Systems (CMS)](#content-management-systems-cms)_
 
