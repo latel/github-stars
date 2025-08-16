@@ -1,6 +1,6 @@
 ---
 project: eslint-plugin-unicorn
-stars: 4718
+stars: 4730
 description: |-
     More than 100 powerful ESLint rules
 url: https://github.com/sindresorhus/eslint-plugin-unicorn
@@ -89,6 +89,7 @@ export default [
 | [no-array-method-this-argument](docs/rules/no-array-method-this-argument.md)                     | Disallow using the `this` argument in array methods.                                                                                                                                                              | ✅  | 🔧 | 💡 |
 | [no-array-reduce](docs/rules/no-array-reduce.md)                                                 | Disallow `Array#reduce()` and `Array#reduceRight()`.                                                                                                                                                              | ✅  |    |    |
 | [no-array-reverse](docs/rules/no-array-reverse.md)                                               | Prefer `Array#toReversed()` over `Array#reverse()`.                                                                                                                                                               | ✅  |    | 💡 |
+| [no-array-sort](docs/rules/no-array-sort.md)                                                     | Prefer `Array#toSorted()` over `Array#sort()`.                                                                                                                                                                    | ✅  |    | 💡 |
 | [no-await-expression-member](docs/rules/no-await-expression-member.md)                           | Disallow member access from await expression.                                                                                                                                                                     | ✅  | 🔧 |    |
 | [no-await-in-promise-methods](docs/rules/no-await-in-promise-methods.md)                         | Disallow using `await` in `Promise` method parameters.                                                                                                                                                            | ✅  |    | 💡 |
 | [no-console-spaces](docs/rules/no-console-spaces.md)                                             | Do not use leading/trailing space between `console.log` parameters.                                                                                                                                               | ✅  | 🔧 |    |

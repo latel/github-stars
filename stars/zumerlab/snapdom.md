@@ -1,6 +1,6 @@
 ---
 project: snapdom
-stars: 4944
+stars: 5360
 description: |-
     snapDOM captures HTML elements to images with exceptional speed and accuracy.
 url: https://github.com/zumerlab/snapdom
@@ -159,13 +159,15 @@ All capture methods accept an `options` object:
 | `compress`        | boolean  | `true`   | Removes redundant styles                   |
 | `fast`            | boolean  | `true`   | Skips idle delay for faster results        |
 | `embedFonts`      | boolean  | `false`  | Inlines fonts (icon fonts always embedded) |
+| `localFonts`      | array   | `[]`     | Array of local font descriptors `{ family, src, weight?, style? }` |
+| `iconFonts`       | string \| RegExp \| (string \| RegExp)[] | `[]` | Additional icon font families or patterns |
 | `scale`           | number   | `1`      | Output scale multiplier                    |
 | `dpr`             | number   | `devicePixelRatio` | Device pixel ratio                 |
 | `width`           | number   | -        | Output specific width size                 |
 | `height`          | number   | -        | Output specific height size                |
 | `backgroundColor` | string   | `"#fff"` | Fallback color for JPG/WebP                |
 | `quality`         | number   | `1`      | Quality for JPG/WebP (0 to 1)              |
-| `useProxy`     | string | ''        | Specify a proxy for handling CORS images as fallback|
+| `useProxy`     | string | ''        | Specify a proxy for handling CORS images/fonts as fallback|
 | `type`     | string | `svg`        | Select `png`, `jpg`, `webp` Blob type|
 | `exclude` | string[] | -  | CSS selectors for elements to exclude |
 | `filter` | function | -  | Custom filter function ie `(el) => !el.classList.contains('hidden')` |
@@ -251,7 +253,9 @@ import { snapdom, preCache } from './snapdom.mjs';
 **Options for `preCache()`:**
 
 * `embedFonts` *(boolean, default: true)* — Inlines non-icon fonts during preload.
-* `useProxy` *(string)* — Proxy for handling CORS images as fallback.
+* `localFonts` *(array)* — Array of `{ family, src, weight?, style? }` for local font sources.
+* `useProxy` *(string)* — Proxy for handling CORS images/fonts as fallback.
+
 
 
 ## Features
