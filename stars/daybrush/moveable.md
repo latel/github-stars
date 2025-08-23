@@ -1,6 +1,6 @@
 ---
 project: moveable
-stars: 10485
+stars: 10499
 description: |-
     Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
 url: https://github.com/daybrush/moveable
