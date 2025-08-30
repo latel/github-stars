@@ -1,6 +1,6 @@
 ---
 project: SuperTinyIcons
-stars: 14995
+stars: 14998
 description: |-
     Under 1KB each! Super Tiny Icons are miniscule SVG versions of your favourite website and app logos
 url: https://github.com/edent/SuperTinyIcons
@@ -12,9 +12,7 @@ Under 1KB each! Super Tiny Web Icons are minuscule SVG versions of your favourit
 
 The logos have a 512x512 viewbox, they will fit in a circle with radius 256. They will scale up and down to suit your needs.
 
-Say thanks!
-
-[![Buy me a coffee](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/edent)
+[![DOI](https://zenodo.org/badge/88214511.svg)](https://doi.org/10.5281/zenodo.16944294)
 
 ## How Small?
 
