@@ -1,6 +1,6 @@
 ---
 project: browserslist
-stars: 13382
+stars: 13388
 description: |-
     🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env
 url: https://github.com/browserslist/browserslist
@@ -111,11 +111,6 @@ Browserslist needs your support. We are accepting donations
   run `update-browserslist-db` and proposes a pull request to merge updates.
 
 
-### Useful Shared Configs
-
-* [`browserslist-config-baseline`]
-
-
 ### Show “We do not support your browser” Banner
 
 * [`browserslist-useragent-regexp`] compiles Browserslist query to a RegExp
@@ -141,7 +136,6 @@ Browserslist needs your support. We are accepting donations
 
 [`browserslist-useragent-regexp`]: https://github.com/browserslist/browserslist-useragent-regexp
 [`browserslist-adobe-analytics`]:  https://github.com/xeroxinteractive/browserslist-adobe-analytics
-[`browserslist-config-baseline`]: https://github.com/web-platform-dx/browserslist-config-baseline
 [`browserslist-useragent-ruby`]:   https://github.com/browserslist/browserslist-useragent-ruby
 [`browserslist-update-action`]:    https://github.com/c2corg/browserslist-update-action
 [`browserslist-browserstack`]:     https://github.com/xeroxinteractive/browserslist-browserstack
@@ -250,6 +244,13 @@ You can specify the browser and Node.js versions by queries (case insensitive):
   * `cover 99.5% in US`: same as above, with [two-letter country code].
   * `cover 99.5% in my stats`: uses [custom usage data].
   * `cover 99.5% in browserslist-config-mycompany stats`: uses [custom usage data] from `browserslist-config-mycompany/browserslist-stats.json`.
+* By [Baseline](https://web-platform-dx.github.io/web-features):
+  * `baseline widely available`: core browser set from [Baseline Widely](https://webstatus.dev/?q=baseline_status%3Awidely) which was released 30 month ago.
+  * `baseline newly available`: the latest release or core browser set from [Baseline Newly](https://webstatus.dev/?q=baseline_status%3Anewly).
+  * `baseline widely available on YYYY-MM-DD`: selects browser versions that supported the Widely available feature set on the specified date.
+  * `baseline 2022`: selects browser versions that are compatible with all features that were Baseline Newly available at the end of the specified year.
+  * `… with downstream`: includes browsers outside the core browser set that support the requested Baseline feature set based on their Chromium or Gecko version. See [`baseline-browser-mapping`](https://github.com/web-platform-dx/baseline-browser-mapping#downstream-browsers).
+  * `… with downstream including kaios`: same output as the previous query plus KaiOS.
 * Last versions:
   * `last 2 versions`: the last 2 versions for *each* browser.
   * `last 2 Chrome versions`: the last 2 versions of Chrome browser.

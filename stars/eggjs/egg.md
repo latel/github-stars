@@ -1,6 +1,6 @@
 ---
 project: egg
-stars: 18976
+stars: 18975
 description: |-
     🥚🥚🥚🥚 Born to build better enterprise frameworks and apps with Node.js & Koa
 url: https://github.com/eggjs/egg
@@ -49,7 +49,7 @@ $ open http://localhost:7001
 This project is structured as a pnpm monorepo with the following packages:
 
 - `packages/egg` - Main Eggjs framework
-- `examples/helloworld-commonjs` - CommonJS example application  
+- `examples/helloworld-commonjs` - CommonJS example application
 - `examples/helloworld-typescript` - TypeScript example application
 - `site` - Documentation website
 
