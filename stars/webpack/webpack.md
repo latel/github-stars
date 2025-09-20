@@ -1,6 +1,6 @@
 ---
 project: webpack
-stars: 65558
+stars: 65595
 description: |-
     A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows for loading parts of the application on demand. Through "loaders", modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.
 url: https://github.com/webpack/webpack
@@ -320,16 +320,9 @@ For information about the governance of the webpack project, see [GOVERNANCE.md]
 - [thelarkinn](https://github.com/thelarkinn) -
   **Sean Larkin** <<selarkin@microsoft.com>> (he/him)
 
-<h3>Core Collaborators</h3>
+<h3>Maintenance</h3>
 
-- [jhnns](https://github.com/jhnns) -
-  **Johannes Ewald** <<mail@johannesewald.de>>
-- [sokra](https://github.com/sokra) -
-  **Tobias Koppers** <<jackworks@protonmail.co>>
-- [spacek33z](https://github.com/spacek33z) -
-  **Kees Kluskens** <<kees@webduck.nl>>
-- [TheLarkInn](https://github.com/TheLarkInn) -
-  **Sean T. Larkin** <<selarkin@microsoft.com>>
+This webpack repository is maintained by the [`Core Working Group`](./WORKING_GROUP.md).
 
 <h2>Sponsoring</h2>
 

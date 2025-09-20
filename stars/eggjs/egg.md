@@ -1,6 +1,6 @@
 ---
 project: egg
-stars: 18975
+stars: 18971
 description: |-
     🥚🥚🥚🥚 Born to build better enterprise frameworks and apps with Node.js & Koa
 url: https://github.com/eggjs/egg
@@ -88,7 +88,7 @@ pnpm --filter=site run dev
 
 Please let us know how can we help. Do check out [issues](https://github.com/eggjs/egg/issues) for bug reports or suggestions first.
 
-To become a contributor, please follow our [contributing guide](CONTRIBUTING.md).
+To become a contributor, please follow our [contributing guide](CONTRIBUTING.md), and review the [repository guidelines](AGENTS.md) for day-to-day development tips.
 
 ## Sponsors and Backers
 
