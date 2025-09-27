@@ -1,6 +1,6 @@
 ---
 project: egg
-stars: 18971
+stars: 18978
 description: |-
     🥚🥚🥚🥚 Born to build better enterprise frameworks and apps with Node.js & Koa
 url: https://github.com/eggjs/egg
@@ -18,7 +18,7 @@ English | [简体中文](./README.zh-CN.md)
 [![Node.js Version](https://img.shields.io/node/v/egg.svg?style=flat)](https://nodejs.org/en/download/)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Feggjs%2Fegg.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Feggjs%2Fegg?ref=badge_shield)
 
-[![Continuous Integration](https://github.com/eggjs/egg/actions/workflows/nodejs.yml/badge.svg)](https://github.com/eggjs/egg/actions?query=branch%3Amaster)
+[![Continuous Integration](https://github.com/eggjs/egg/actions/workflows/ci.yml/badge.svg)](https://github.com/eggjs/egg/actions?query=branch%3Amaster)
 [![Test coverage](https://img.shields.io/codecov/c/github/eggjs/egg.svg?style=flat-square)](https://codecov.io/gh/eggjs/egg)
 [![Known Vulnerabilities](https://snyk.io/test/npm/egg/badge.svg?style=flat-square)](https://snyk.io/test/npm/egg)
 [![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/eggjs?style=flat-square)](https://opencollective.com/eggjs)
@@ -36,7 +36,7 @@ Follow the commands listed below.
 
 ```bash
 $ mkdir showcase && cd showcase
-$ npm init egg --type=simple # Optionally pnpm create egg --type=simple
+$ pnpm create egg@beta
 $ pnpm install
 $ pnpm run dev
 $ open http://localhost:7001
@@ -75,7 +75,7 @@ pnpm --filter=site run dev
 
 ## Documentations
 
-- [Documentations](https://eggjs.org/en/index.html)
+- [Documentations](https://eggjs.org/)
 - [Plugins](https://github.com/search?q=topic%3Aegg-plugin&type=Repositories)
 - [Frameworks](https://github.com/search?q=topic%3Aegg-framework&type=Repositories)
 - [Examples](https://github.com/eggjs/examples)
