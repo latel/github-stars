@@ -1,6 +1,6 @@
 ---
 project: esbuild
-stars: 39336
+stars: 39344
 description: |-
     An extremely fast bundler for the web
 url: https://github.com/evanw/esbuild
