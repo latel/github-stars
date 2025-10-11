@@ -1,6 +1,6 @@
 ---
 project: Modernizr
-stars: 25668
+stars: 25671
 description: |-
     Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.
 url: https://github.com/Modernizr/Modernizr

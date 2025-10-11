@@ -1,6 +1,6 @@
 ---
 project: store.js
-stars: 14026
+stars: 14028
 description: |-
     Cross-browser storage for all use cases, used across the web.
 url: https://github.com/marcuswestin/store.js
