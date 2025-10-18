@@ -1,6 +1,6 @@
 ---
 project: driver.js
-stars: 24857
+stars: 24891
 description: |-
     A lightweight, dependency-free JavaScript library for guiding user focus across the page.
 url: https://github.com/kamranahmedse/driver.js
