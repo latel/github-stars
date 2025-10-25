@@ -1,6 +1,6 @@
 ---
 project: lede
-stars: 31018
+stars: 31033
 description: |-
     Lean's LEDE source
 url: https://github.com/coolsnowwolf/lede

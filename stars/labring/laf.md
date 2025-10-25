@@ -1,6 +1,6 @@
 ---
 project: laf
-stars: 7597
+stars: 7601
 description: |-
     Laf is a vibrant cloud development platform that provides essential tools like cloud functions, databases, and storage solutions. It enables developers to quickly unleash their creativity and bring innovative ideas to life with ease.
 url: https://github.com/labring/laf

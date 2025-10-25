@@ -1,6 +1,6 @@
 ---
 project: immer
-stars: 28660
+stars: 28671
 description: |-
     Create the next immutable state by mutating the current one
 url: https://github.com/immerjs/immer
