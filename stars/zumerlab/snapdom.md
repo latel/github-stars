@@ -1,8 +1,8 @@
 ---
 project: snapdom
-stars: 6517
+stars: 6763
 description: |-
-    snapDOM captures HTML elements to images with exceptional speed and accuracy.
+    SnapDOM is a next-generation DOM capture engine that transforms HTML into almost any format all powered by a flexible plugin system
 url: https://github.com/zumerlab/snapdom
 ---
 
@@ -505,10 +505,10 @@ For each export key you return (e.g., `"pdf"`), SnapDOM automatically exposes a 
 import { snapdom } from '@zumer/snapdom';
 
 // global
-snapdom.plugins(pdfExportPlugin());
+snapdom.plugins(overlayFilterPlugin());
 
 // or per capture
-const out = await snapdom(element, { plugins: [pdfExportPlugin()] });
+const out = await snapdom(element, { plugins: [overlayFilterPlugin()] });
 ```
 
 **Call the custom export:**

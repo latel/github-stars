@@ -1,6 +1,6 @@
 ---
 project: minio
-stars: 57285
+stars: 57716
 description: |-
     MinIO is a high-performance, S3 compatible object store, open sourced under GNU AGPLv3 license.
 url: https://github.com/minio/minio
@@ -85,7 +85,7 @@ mc admin info local
 ```
 
 See [Test using MinIO Client `mc`](#test-using-minio-client-mc) for more information on using the `mc` commandline tool.
-For application developers, see <https://docs.min.io/community/minio-object-store/developers/minio-drivers.html> to view MinIO SDKs for supported languages.
+For application developers, see <https://docs.min.io/enterprise/aistor-object-store/developers/sdk/> to view MinIO SDKs for supported languages.
 
 > [!NOTE]
 > Production environments using compiled-from-source MinIO binaries do so at their own risk.
@@ -155,7 +155,7 @@ Follow the MinIO Client [Quickstart Guide](https://docs.min.io/community/minio-o
 - [The MinIO documentation website](https://docs.min.io/community/minio-object-store/index.html)
 - [MinIO Erasure Code Overview](https://docs.min.io/community/minio-object-store/operations/concepts/erasure-coding.html)
 - [Use `mc` with MinIO Server](https://docs.min.io/community/minio-object-store/reference/minio-mc.html)
-- [Use `minio-go` SDK with MinIO Server](https://docs.min.io/community/minio-object-store/developers/go/minio-go.html)
+- [Use `minio-go` SDK with MinIO Server](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/go/)
 
 ## Contribute to MinIO Project
 

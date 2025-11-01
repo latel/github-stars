@@ -1,6 +1,6 @@
 ---
 project: openwrt
-stars: 3608
+stars: 3607
 description: |-
     Lienol's Modified OpenWrt source
 url: https://github.com/Lienol/openwrt

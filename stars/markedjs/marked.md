@@ -1,6 +1,6 @@
 ---
 project: marked
-stars: 35928
+stars: 35955
 description: |-
     A markdown parser and compiler. Built for speed.
 url: https://github.com/markedjs/marked
@@ -111,5 +111,6 @@ or import esm module
 
 ## License
 
-Copyright (c) 2011-2022, Christopher Jeffrey. (MIT License)
+Copyright (c) 2018+, MarkedJS. (MIT License)
+Copyright (c) 2011-2018, Christopher Jeffrey. (MIT License)
 
