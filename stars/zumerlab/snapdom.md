@@ -1,6 +1,6 @@
 ---
 project: snapdom
-stars: 6763
+stars: 6852
 description: |-
     SnapDOM is a next-generation DOM capture engine that transforms HTML into almost any format all powered by a flexible plugin system
 url: https://github.com/zumerlab/snapdom
@@ -36,6 +36,8 @@ url: https://github.com/zumerlab/snapdom
     <img alt="License" src="https://img.shields.io/github/license/zumerlab/snapdom?style=flat-square">
   </a>
 </p>
+
+<p align="center">English | <a href="README_CN.md">简体中文</a></p>
 
 # snapDOM
 
@@ -80,8 +82,8 @@ It captures any HTML element as a scalable SVG image, preserving styles, fonts, 
     - [iconFonts](#iconfonts)
     - [excludeFonts](#excludefonts)
   - [Filtering nodes: `exclude` vs `filter`](#filtering-nodes-exclude-vs-filter)
-  - [straighten](#straighten)
-  - [noShadows](#no-shadows)
+  - [outerTransforms](#outerTransforms)
+  - [outerShadows](#no-shadows)
   - [Cache control](#cache-control)
 - [preCache](#precache--optional-helper)
 - [Plugins (BETA)](#plugins-beta)
@@ -236,8 +238,8 @@ All capture methods accept an `options` object:
 | `cache`           | string   | `"soft"` | `disabled` \| `soft` \| `auto` \| `full`        |
 | `placeholders`    | boolean  | `true`   | Show placeholders for images/CORS iframes       |
 | `fallbackURL`     | string \| function  | - | Fallback image for `<img>` load failure |
-| `straighten`      | boolean  | `false`  | Straightens the root: removes `translate/rotate` but preserves `scale/skew`, producing a flat, reusable capture |
-| `noShadows`       | boolean  | `false`  | Do not expand the root’s bounding box for shadows/blur/outline, and strip those visual effects from the cloned root |
+| `outerTransforms`      | boolean  | `true`  | When `false` removes `translate/rotate` but preserves `scale/skew`, producing a flat, reusable capture |
+| `outerShadows`       | boolean  | `false`  | Do not expand the root’s bounding box for shadows/blur/outline, and strip those visual effects from the cloned root |
 
 ### Fallback image on `<img>` load failure
 
@@ -362,26 +364,25 @@ await snapdom.toPng(el, {
 });
 ```
 
-### Straighten 
+### outerTransforms 
 
-When capturing rotated or translated elements, you may want to **straighten** the root so the snapshot can be reused in another layout without inheriting those transforms.
+When capturing rotated or translated elements, you may want use **outerTransforms: false** option if you want to eliminate those external transforms. So, the output is **flat, upright, and ready** to use elsewhere.
 
-- **`straighten: true`**  
-  Straightens the cloned root: **removes `translate` and `rotate`** but **keeps `scale/skew`** to preserve proportions.  
-  The output is **flat, upright, and ready** to embed elsewhere.
+- **`outerTransforms: true (default)`**  
+  **Keeps the original `transforms` and `rotate`**.  
+  
 
-
-### noShadows
-- **`noShadows: true`**  
+### outerShadows
+- **`outerShadows: false (default)`**  
   Prevents expanding the bounding box for shadows, blur, or outline on the root, and also strips `box-shadow`, `text-shadow`, `filter: blur()/drop-shadow()`, and `outline` from the cloned root.  
 
-> 💡 **Tip:** Using both (`straighten` + `noShadows`) produces a strict, minimal bounding box with no visual bleed.
+> 💡 **Tip:** Using both (`outerTransforms: false` + `outerShadows: false`) produces a strict, minimal bounding box with no visual bleed.
 
 **Example**
 
 ```js
-// Straighten and remove shadow bleed
-await snapdom.toSvg(el, { straighten: true, noShadows: true });
+// outerTransforms and remove shadow bleed
+await snapdom.toSvg(el, { outerTransforms: true, outerShadows: true });
 ```
 
 ## Cache control
@@ -482,7 +483,7 @@ const out = await snapdom(element, {
 Every hook receives a single `context` object that contains normalized capture state:
 
 * **Input & options:**
-  `element`, `debug`, `fast`, `scale`, `dpr`, `width`, `height`, `backgroundColor`, `quality`, `useProxy`, `cache`, `straighten`, `noShadows`, `embedFonts`, `localFonts`, `iconFonts`, `excludeFonts`, `exclude`, `excludeMode`, `filter`, `filterMode`, `fallbackURL`.
+  `element`, `debug`, `fast`, `scale`, `dpr`, `width`, `height`, `backgroundColor`, `quality`, `useProxy`, `cache`, `outerTransforms`, `outerShadows`, `embedFonts`, `localFonts`, `iconFonts`, `excludeFonts`, `exclude`, `excludeMode`, `filter`, `filterMode`, `fallbackURL`.
 
 * **Intermediate values (depending on stage):**
   `clone`, `classCSS`, `styleCache`, `fontsCSS`, `baseCSS`, `svgString`, `dataURL`.
@@ -505,10 +506,10 @@ For each export key you return (e.g., `"pdf"`), SnapDOM automatically exposes a 
 import { snapdom } from '@zumer/snapdom';
 
 // global
-snapdom.plugins(overlayFilterPlugin());
+snapdom.plugins(pdfExportPlugin());
 
 // or per capture
-const out = await snapdom(element, { plugins: [overlayFilterPlugin()] });
+const out = await snapdom(element, { plugins: [pdfExportPlugin()] });
 ```
 
 **Call the custom export:**
@@ -760,6 +761,7 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 <a href="https://github.com/tinchox5" title="tinchox5"><img src="https://avatars.githubusercontent.com/u/11557901?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="tinchox5"/></a>
 <a href="https://github.com/Jarvis2018" title="Jarvis2018"><img src="https://avatars.githubusercontent.com/u/36788851?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="Jarvis2018"/></a>
 <a href="https://github.com/tarwin" title="tarwin"><img src="https://avatars.githubusercontent.com/u/646149?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="tarwin"/></a>
+<a href="https://github.com/jswhisperer" title="jswhisperer"><img src="https://avatars.githubusercontent.com/u/1177690?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="jswhisperer"/></a>
 <a href="https://github.com/K1ender" title="K1ender"><img src="https://avatars.githubusercontent.com/u/146767945?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="K1ender"/></a>
 <a href="https://github.com/17biubiu" title="17biubiu"><img src="https://avatars.githubusercontent.com/u/13295895?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="17biubiu"/></a>
 <a href="https://github.com/av01d" title="av01d"><img src="https://avatars.githubusercontent.com/u/6247646?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="av01d"/></a>
@@ -767,7 +769,6 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 <a href="https://github.com/pedrocateexte" title="pedrocateexte"><img src="https://avatars.githubusercontent.com/u/207524750?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="pedrocateexte"/></a>
 <a href="https://github.com/domialex" title="domialex"><img src="https://avatars.githubusercontent.com/u/4694217?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="domialex"/></a>
 <a href="https://github.com/elliots" title="elliots"><img src="https://avatars.githubusercontent.com/u/622455?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="elliots"/></a>
-<a href="https://github.com/jswhisperer" title="jswhisperer"><img src="https://avatars.githubusercontent.com/u/1177690?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="jswhisperer"/></a>
 <a href="https://github.com/mon-jai" title="mon-jai"><img src="https://avatars.githubusercontent.com/u/91261297?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="mon-jai"/></a>
 <a href="https://github.com/sharuzzaman" title="sharuzzaman"><img src="https://avatars.githubusercontent.com/u/7421941?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="sharuzzaman"/></a>
 <a href="https://github.com/simon1uo" title="simon1uo"><img src="https://avatars.githubusercontent.com/u/60037549?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="simon1uo"/></a>
