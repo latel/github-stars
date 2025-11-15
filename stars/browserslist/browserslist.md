@@ -1,6 +1,6 @@
 ---
 project: browserslist
-stars: 13440
+stars: 13444
 description: |-
     🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env
 url: https://github.com/browserslist/browserslist
@@ -111,19 +111,21 @@ Browserslist needs your support. We are accepting donations
   run `update-browserslist-db` and proposes a pull request to merge updates.
 
 
+### Get Statistics for `>5% in my stats`:
+
+* [`browserslist-plausible`] downloads your website
+  browsers statistics from Plausible to use it in `> 0.5% in my stats` query.
+* [`browserslist-ga`] and [`browserslist-ga-export`] download website
+  browsers statistics from Google Analytics.
+* [`browserslist-new-relic`] generates a custom usage data file for Browserslist
+
+
 ### Show “We do not support your browser” Banner
 
 * [`browserslist-useragent-regexp`] compiles Browserslist query to a RegExp
   to test browser useragent.
 * [`browserslist-useragent-ruby`] is a Ruby library to check browser
   by user agent string to match Browserslist.
-
-
-### Get Statistics for `>5% in my stats`:
-
-* [`browserslist-ga`] and [`browserslist-ga-export`] download your website
-  browsers statistics to use it in `> 0.5% in my stats` query.
-* [`browserslist-new-relic`] generates a custom usage data file for Browserslist
 
 ### Others
 
@@ -135,6 +137,7 @@ Browserslist needs your support. We are accepting donations
 [`browserslist-ga-export`]:        https://github.com/browserslist/browserslist-ga-export
 [`browserslist-useragent`]:        https://github.com/pastelsky/browserslist-useragent
 [`update-browserslist-db`]:        https://github.com/browserslist/update-db
+[`browserslist-plausible`]:        https://github.com/browserslist/browserslist-plausible
 [`browserslist-new-relic`]:        https://github.com/syntactic-salt/browserslist-new-relic
 [`browserslist-lint`]:             https://github.com/browserslist/lint/
 [`browserslist-ga`]:               https://github.com/browserslist/browserslist-ga
@@ -535,14 +538,13 @@ node 12
 ## Custom Usage Data
 
 If you have a website, you can query against the usage statistics of your site.
-[`browserslist-ga`] will ask access to Google Analytics and then generate
-`browserslist-stats.json`:
+[`browserslist-plausible`] will download your real statistics from [Plausible](https://plausible.io/) and then generate `browserslist-stats.json`.
 
-```
-npx browserslist-ga
+```sh
+npx browserslist-plausible --host https://plausible.example.org example.org
 ```
 
-Or you can use [`browserslist-ga-export`] to convert Google Analytics data without giving a password for Google account.
+[`browserslist-ga`] will go the same for Google Analytics. Or you can use [`browserslist-ga-export`] to convert Google Analytics data without giving a password for Google account.
 
 You can generate usage statistics file by any other method. File format should
 be like:
@@ -565,6 +567,7 @@ Note that you can query against your custom usage data while also querying
 against global or regional data. For example, the query
 `> 1% in my stats, > 5% in US, 10%` is permitted.
 
+[`browserslist-plausible`]: https://github.com/browserslist/browserslist-plausible
 [`browserslist-ga-export`]: https://github.com/browserslist/browserslist-ga-export
 [`browserslist-ga`]:        https://github.com/browserslist/browserslist-ga
 [Can I Use]:                https://caniuse.com/
