@@ -1,6 +1,6 @@
 ---
 project: axios
-stars: 108217
+stars: 108254
 description: |-
     Promise based HTTP client for the browser and node.js
 url: https://github.com/axios/axios

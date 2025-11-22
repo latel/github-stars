@@ -1,6 +1,6 @@
 ---
 project: bun
-stars: 82185
+stars: 82302
 description: |-
     Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one
 url: https://github.com/oven-sh/bun
@@ -62,7 +62,7 @@ Bun supports Linux (x64 & arm64), macOS (x64 & Apple Silicon) and Windows (x64).
 curl -fsSL https://bun.com/install | bash
 
 # on windows
-powershell -c "irm bun.com/install.ps1 | iex"
+powershell -c "irm bun.sh/install.ps1 | iex"
 
 # with npm
 npm install -g bun
@@ -112,13 +112,13 @@ bun upgrade --canary
   - [File types (Loaders)](https://bun.com/docs/runtime/loaders)
   - [TypeScript](https://bun.com/docs/runtime/typescript)
   - [JSX](https://bun.com/docs/runtime/jsx)
-  - [Environment variables](https://bun.com/docs/runtime/env)
+  - [Environment variables](https://bun.com/docs/runtime/environment-variables)
   - [Bun APIs](https://bun.com/docs/runtime/bun-apis)
   - [Web APIs](https://bun.com/docs/runtime/web-apis)
-  - [Node.js compatibility](https://bun.com/docs/runtime/nodejs-apis)
+  - [Node.js compatibility](https://bun.com/docs/runtime/nodejs-compat)
   - [Single-file executable](https://bun.com/docs/bundler/executables)
   - [Plugins](https://bun.com/docs/runtime/plugins)
-  - [Watch mode / Hot Reloading](https://bun.com/docs/runtime/hot)
+  - [Watch mode / Hot Reloading](https://bun.com/docs/runtime/watch-mode)
   - [Module resolution](https://bun.com/docs/runtime/modules)
   - [Auto-install](https://bun.com/docs/runtime/autoimport)
   - [bunfig.toml](https://bun.com/docs/runtime/bunfig)
