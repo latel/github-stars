@@ -1,6 +1,6 @@
 ---
 project: awesome-selfhosted
-stars: 261782
+stars: 262807
 description: |-
     A list of Free Software network services and web applications which can be hosted on your own servers
 url: https://github.com/awesome-selfhosted/awesome-selfhosted
@@ -1250,7 +1250,7 @@ Software to manage [3D printers](https://en.wikipedia.org/wiki/3D_printing), [CN
 
 _See also: [awesome-openstreetmap](https://github.com/osmlab/awesome-openstreetmap), [awesome-gis](https://github.com/sshuair/awesome-gis)_
 
-- [AdventureLog](https://adventurelog.app) - Travel tracker and trip planner. ([Demo](https://adventurelog.app), [Source Code](https://github.com/seanmorley15/AdventureLog)) `GPL-3.0` `Docker`
+- [AdventureLog](https://adventurelog.app) - Travel tracker and trip planner. ([Demo](https://demo.adventurelog.app/signup), [Source Code](https://github.com/seanmorley15/AdventureLog)) `GPL-3.0` `Docker`
 - [AirTrail](https://airtrail.johan.ohly.dk) - Personal flight tracking system. ([Source Code](https://github.com/johanohly/AirTrail)) `GPL-3.0` `Docker/Nodejs`
 - [Bicimon](https://github.com/knrdl/bicimon) - Bike Speedometer as Progressive Web App. ([Demo](https://knrdl.github.io/bicimon/)) `MIT` `Javascript`
 - [Dawarich](https://dawarich.app/) - Visualize your location history, track your movements, and analyze your travel patterns with complete privacy and control (alternative to Google Timeline a.k.a. Google Location History). ([Source Code](https://github.com/Freika/dawarich)) `AGPL-3.0` `Docker`
@@ -1452,6 +1452,7 @@ Software that does not fit in another section.
 - [Neko](https://neko.m1k1o.net) - Virtual browser that runs in docker and uses WebRTC. ([Source Code](https://github.com/m1k1o/neko)) `Apache-2.0` `Docker/Go`
 - [OmniTools](https://omnitools.app/) - Collection of powerful web-based tools for everyday tasks (coding, manipulating images/videos, PDFs or crunching numbers...). ([Source Code](https://github.com/iib0011/omni-tools)) `MIT` `Docker`
 - [Open-Meteo](https://open-meteo.com/) - Weather API with open-data forecasts, historical and climate data from all major national weather services. ([Demo](https://open-meteo.com/en/docs), [Source Code](https://github.com/open-meteo/open-meteo)) `AGPL-3.0` `Docker`
+- [OpenReader WebUI](https://openreader.richardr.dev/) - EPUB, PDF, DOCX, MD, and TXT file text to speech document reader. Read documents in realtime with high-quality TTS; or extract audiobooks. ([Demo](https://openreader.richardr.dev/), [Source Code](https://github.com/richardr1126/OpenReader-WebUI)) `MIT` `Docker`
 - [OpenZiti](https://openziti.io/) - Fully-featured, zero trust, full mesh overlay network. Includes a 2FA support out of the box, clients for all major desktop/mobile OS'es. ([Source Code](https://github.com/openziti/ziti)) `Apache-2.0` `Go`
 - [Operational.co](https://operational.co) - Receive alerts in a live timeline from your product. ([Demo](https://app.operational.co/?signinas=kevin), [Source Code](https://github.com/operational-co/operational.co)) `AGPL-3.0` `Nodejs/Docker`
 - [penpot](https://penpot.app/) - Web-based design and prototyping platform meant for cross-domain teams. ([Source Code](https://github.com/penpot/penpot)) `MPL-2.0` `Docker`

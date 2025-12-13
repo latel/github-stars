@@ -1,6 +1,6 @@
 ---
 project: AFFiNE
-stars: 60446
+stars: 60694
 description: |-
     There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use. 
 url: https://github.com/toeverything/AFFiNE
@@ -200,6 +200,8 @@ We would like to express our gratitude to all the individuals who have already c
 ## Self-Host
 
 Begin with Docker to deploy your own feature-rich, unrestricted version of AFFiNE. Our team is diligently updating to the latest version. For more information on how to self-host AFFiNE, please refer to our [documentation](https://docs.affine.pro/self-host-affine).
+
+[![Run on Sealos](https://sealos.io/Deploy-on-Sealos.svg)](https://sealos.io/products/app-store/affine)
 
 [![Run on ClawCloud](https://raw.githubusercontent.com/ClawCloud/Run-Template/refs/heads/main/Run-on-ClawCloud.svg)](https://template.run.claw.cloud/?openapp=system-fastdeploy%3FtemplateName%3Daffine)
 

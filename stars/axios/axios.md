@@ -1,6 +1,6 @@
 ---
 project: axios
-stars: 108332
+stars: 108358
 description: |-
     Promise based HTTP client for the browser and node.js
 url: https://github.com/axios/axios
@@ -1785,6 +1785,25 @@ The recommended setting is to use `"moduleResolution": "node16"` (this is implie
 If use ESM, your settings should be fine.
 If you compile TypeScript to CJS and you can’t use `"moduleResolution": "node 16"`, you have to enable `esModuleInterop`.
 If you use TypeScript to type check CJS JavaScript code, your only option is to use `"moduleResolution": "node16"`.
+
+
+You can also create a custom instance with typed interceptors:
+
+```typescript
+import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
+
+const apiClient: AxiosInstance = axios.create({
+  baseURL: 'https://api.example.com',
+  timeout: 10000,
+});
+
+apiClient.interceptors.request.use(
+  (config: InternalAxiosRequestConfig) => {
+    // Add auth token
+    return config;
+  }
+);
+```
 
 ## Online one-click setup
 
