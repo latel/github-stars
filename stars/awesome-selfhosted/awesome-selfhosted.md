@@ -1,6 +1,6 @@
 ---
 project: awesome-selfhosted
-stars: 262807
+stars: 263927
 description: |-
     A list of Free Software network services and web applications which can be hosted on your own servers
 url: https://github.com/awesome-selfhosted/awesome-selfhosted
