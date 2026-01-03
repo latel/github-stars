@@ -1,6 +1,6 @@
 ---
 project: theme.park
-stars: 2966
+stars: 2973
 description: |-
     A collection of themes/skins for 50 selfhosted apps!
 url: https://github.com/themepark-dev/theme.park
@@ -311,6 +311,14 @@ url: https://github.com/themepark-dev/theme.park
 <td>
 <p><a href="https://docs.theme-park.dev/themes/docmost"><img src="https://docs.theme-park.dev/site_assets/docmost/logo.png" alt="" width="48" height="48" /></a></p>
 <p><a href="https://docs.theme-park.dev/themes/docmost">Docmost</a></p>
+</td>
+<td>
+<p><a href="https://docs.theme-park.dev/themes/authelia"><img src="https://docs.theme-park.dev/site_assets/authelia/logo.png" alt="" width="48" height="48" /></a></p>
+<p><a href="https://docs.theme-park.dev/themes/authelia">Authelia</a></p>
+</td>
+<td>
+<p><a href="https://docs.theme-park.dev/themes/lldap"><img src="https://docs.theme-park.dev/site_assets/lldap/logo.png" alt="" width="48" height="48" /></a></p>
+<p><a href="https://docs.theme-park.dev/themes/lldap">Authelia</a></p>
 </td>
 </tr>
 </tbody>

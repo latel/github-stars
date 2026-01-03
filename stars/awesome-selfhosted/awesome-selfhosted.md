@@ -1,6 +1,6 @@
 ---
 project: awesome-selfhosted
-stars: 265199
+stars: 266365
 description: |-
     A list of Free Software network services and web applications which can be hosted on your own servers
 url: https://github.com/awesome-selfhosted/awesome-selfhosted
@@ -160,7 +160,6 @@ _Related: [Database Management](#database-management), [Personal Dashboards](#pe
 - [Prisme Analytics](https://www.prismeanalytics.com) - Privacy-focused and progressive analytics service based on Grafana. ([Source Code](https://github.com/prismelabs/analytics)) `AGPL-3.0/MIT` `Docker`
 - [Redash](http://redash.io) - Connect and query your data sources, build dashboards to visualize data and share them with your company. ([Source Code](https://github.com/getredash/redash)) `BSD-2-Clause` `Docker`
 - [Rybbit](https://rybbit.com/) - Web and products analytics that is easy to setup and more intuitive (alternative to Google Analytics). ([Demo](https://demo.rybbit.com/1), [Source Code](https://github.com/rybbit-io/rybbit)) `AGPL-3.0` `Docker`
-- [Shynet](https://github.com/milesmcc/shynet) - Modern, privacy-friendly, and detailed web analytics that works without cookies or JS. `Apache-2.0` `Python/Docker`
 - [Socioboard](https://github.com/socioboard/Socioboard-5.0) `⚠` - Social media management, analytics, and reporting platform supporting nine social media networks out-of-the-box. `GPL-3.0` `Nodejs`
 - [Statistics for Strava](https://github.com/robiningelbrecht/statistics-for-strava) `⚠` - Statistics dashboard generated from Strava data. ([Demo](https://statistics-for-strava.robiningelbrecht.be/)) `AGPL-3.0` `Docker`
 - [Superset](http://superset.apache.org/) - Modern data exploration and visualization platform. ([Source Code](https://github.com/apache/superset)) `Apache-2.0` `Python`
@@ -859,7 +858,6 @@ A [news aggregator](https://en.wikipedia.org/wiki/News_aggregator), also termed 
 - [Miniflux](https://miniflux.app/) - Minimalist news reader. ([Source Code](https://github.com/miniflux/v2)) `Apache-2.0` `Go/deb/Docker`
 - [NewsBlur](https://www.newsblur.com/) - Personal news reader that brings people together to talk about the world. A new sound of an old instrument. ([Source Code](https://github.com/samuelclay/NewsBlur)) `MIT` `Python`
 - [Newspipe](https://git.sr.ht/~cedric/newspipe) - Web news reader. ([Demo](https://www.newspipe.org/signup)) `AGPL-3.0` `Python`
-- [Precis](https://github.com/leozqin/precis) - Extensibility-oriented RSS reader that can use LLMs (including local LLMs) to summarize RSS entries with built-in notification support. `MIT` `Python/Docker`
 - [reader](https://github.com/lemon24/reader) - Feed reader web app and library (so you can use it to build your own), with only standard library and pure-Python dependencies. `BSD-3-Clause` `Python`
 - [Readflow](https://readflow.app) - Lightweight news reader with modern interface and features: full-text search, automatic categorization, archiving, offline support, notifications. ([Source Code](https://github.com/ncarlier/readflow)) `AGPL-3.0` `Go/Docker`
 - [RSS-Bridge](https://github.com/RSS-Bridge/rss-bridge) - Generate RSS/ATOM feeds for websites which don't have one. `Unlicense` `PHP/Docker`
@@ -1363,7 +1361,7 @@ _Related: [Media Streaming - Video Streaming](#media-streaming---video-streaming
 - [Gerbera](https://gerbera.io/) - UPnP Media Server, which allows you to stream your digital media throughout your home network and listen to/watch it on a variety of UPnP compatible devices. ([Source Code](https://github.com/gerbera/gerbera)) `GPL-2.0` `Docker/deb/C++`
 - [Icecast 2](https://icecast.org) - Streaming audio/video server which can be used to create an Internet radio station or a privately running jukebox and many things in between. ([Source Code](https://gitlab.xiph.org/xiph/icecast-server), [Clients](https://icecast.org/apps/)) `GPL-2.0` `C`
 - [Jellyfin](https://jellyfin.org) - Media server for audio, video, books, comics, and photos with a sleek interface and robust transcoding capabilities. Almost all modern platforms have clients, including Roku, Android TV, iOS, and Kodi. ([Demo](https://demo.jellyfin.org/stable), [Source Code](https://github.com/jellyfin/jellyfin), [Clients](https://github.com/awesome-jellyfin/awesome-jellyfin)) `GPL-2.0` `C#/deb/Docker`
-- [Karaoke Eternal](https://www.karaoke-eternal.com) - Host awesome karaoke parties where everyone can easily find and queue songs from their phone's browser. The player is also fully browser-based with support for MP3+G, MP4 and WebGL visualizations. ([Source Code](https://www.karaoke-eternal.com/repo)) `ISC` `Docker/Nodejs`
+- [Karaoke Eternal](https://www.karaoke-eternal.com) - Host awesome karaoke parties where everyone can easily find and queue songs from their phone's browser. The player is also fully browser-based with support for MP3+G, MP4 and WebGL visualizations. ([Source Code](https://github.com/bhj/KaraokeEternal)) `ISC` `Docker/Nodejs`
 - [Kodi](https://kodi.tv/) - Multimedia/Entertainment center, formerly known as XBMC. Runs on Android, BSD, Linux, macOS, iOS and Windows. ([Source Code](https://github.com/xbmc/xbmc)) `GPL-2.0` `C++/deb`
 - [Kyoo](https://github.com/zoriya/kyoo) - Innovative media browser designed for seamless streaming of anime, series and movies, offering advanced features like dynamic transcoding, auto watch history and intelligent metadata retrieval. ([Demo](https://kyoo.zoriya.dev)) `GPL-3.0` `Docker`
 - [Meelo](https://github.com/Arthi-chaud/Meelo) - Personal Music Server, designed for collectors and music maniacs. `GPL-3.0` `Docker`
@@ -1545,7 +1543,7 @@ Software for [monitoring](https://en.wikipedia.org/wiki/Monitoring#Computing) sy
 _Related: [Wikis](#wikis)_
 
 - [Blinko](https://blinko.space/) - A personal note tool with AI features. ([Source Code](https://github.com/blinkospace/blinko)) `AGPL-3.0` `Docker`
-- [DailyTxT](https://github.com/PhiTux/DailyTxT) - Encrypted diary Web application to save your personal memories of each day. Includes a search function and encrypted file upload. `MIT` `Docker`
+- [DailyTxT](https://github.com/PhiTux/DailyTxT) - Encrypted diary Web application to save your personal memories of each day. Includes a search function and encrypted file upload. ([Demo](https://dailytxt.phitux.de)) `MIT` `Docker`
 - [Docs](https://docs.numerique.gouv.fr/) - Collaborative note taking, wiki and documentation platform that scales. ([Source Code](https://github.com/suitenumerique/docs)) `MIT` `K8S`
 - [draw.io](https://draw.io) - Diagram software for making flowcharts, process diagrams, org charts, UML, ER and network diagrams. ([Source Code](https://github.com/jgraph/drawio)) `Apache-2.0` `Javascript/Docker`
 - [flatnotes](https://github.com/dullage/flatnotes) - Database-less note-taking web app that utilises a flat folder of markdown files for storage. ([Demo](https://demo.flatnotes.io)) `MIT` `Docker`
@@ -1760,7 +1758,6 @@ Software and tools for managing [recipes](https://en.wikipedia.org/wiki/Recipe).
 - [Firezone](https://www.firezone.dev/) - Secure remote access gateway that supports the WireGuard protocol. It offers a Web GUI, 1-line install script, multi-factor auth (MFA), and SSO. ([Source Code](https://github.com/firezone/firezone)) `Apache-2.0` `Elixir/Docker`
 - [Guacamole](https://guacamole.apache.org) - Clientless remote desktop gateway supporting standard protocols like VNC and RDP. ([Source Code](https://github.com/apache/guacamole-server)) `Apache-2.0` `Java/C`
 - [MeshCentral](https://meshcentral.com/) - Run your own web server to remotely manage and control computers on a local network or anywhere on the internet. ([Source Code](https://github.com/Ylianst/MeshCentral)) `Apache-2.0` `Nodejs`
-- [Remotely](https://github.com/immense/Remotely) - Remote desktop control and remote scripting solution, enterprise level remote support solution with admin web interface and remote control via browser. `GPL-3.0` `C#/Docker`
 - [ShellHub](https://www.shellhub.io) - Modern SSH server for remotely accessing linux devices via command line (using any SSH client) or web-based user interface (alternative to sshd). ([Source Code](https://github.com/shellhub-io/shellhub)) `Apache-2.0` `Docker`
 - [Sshwifty](https://github.com/nirui/sshwifty) - Sshwifty is a SSH and Telnet connector made for the Web. ([Demo](https://sshwifty-demo.nirui.org)) `AGPL-3.0` `Go/Docker`
 - [Termix](https://docs.termix.site/) - Clientless web-based server management platform with SSH terminal, tunneling, and file editing capabilities. ([Source Code](https://github.com/LukeGus/Termix)) `Apache-2.0` `Docker`
@@ -1924,7 +1921,6 @@ _Related: [Software Development - Low Code](#software-development---low-code)_
 - [LiveCodes](https://livecodes.io/docs/features/self-hosting) `⚠` - Feature-rich client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 90+ other languages. ([Demo](https://livecodes.io), [Source Code](https://github.com/live-codes/livecodes)) `MIT` `Nodejs`
 - [Lowdefy](https://www.lowdefy.com/) - Build internal tools, BI dashboards, admin panels, CRUD apps and workflows in minutes using YAML / JSON on an self-hosted, open-source platform. Connect to your data sources, host via Serverless, Netlify or Docker. ([Source Code](https://github.com/lowdefy/lowdefy)) `Apache-2.0` `Nodejs/Docker`
 - [RStudio Server](https://www.rstudio.com/products/rstudio/#Server) - Web browser based IDE for R. ([Source Code](https://github.com/rstudio/rstudio)) `AGPL-3.0` `Java/C++`
-- [Wakapi](https://wakapi.dev/) - Tracking tool for coding statistics, compatible with WakaTime. ([Source Code](https://github.com/muety/wakapi)) `GPL-3.0` `Go/Docker`
 
 
 ### Software Development - Localization
@@ -2104,6 +2100,7 @@ _Related: [Task Management & To-do Lists](#task-management--to-do-lists), [Softw
 - [solidtime](https://www.solidtime.io) - Modern time tracking application for freelancers and agencies. ([Source Code](https://github.com/solidtime-io/solidtime)) `AGPL-3.0` `Docker`
 - [TimeTagger](https://timetagger.app) - An open source time-tracker based on an interactive timeline and powerful reporting. ([Demo](https://timetagger.app/app/demo), [Source Code](https://github.com/almarklein/timetagger)) `GPL-3.0` `Python`
 - [Traggo](https://traggo.net/) - Traggo is a tag-based time tracking tool. In Traggo there are no tasks, only tagged time spans. ([Source Code](https://github.com/traggo/server)) `GPL-3.0` `Docker/Go`
+- [Wakapi](https://wakapi.dev/) - Tracking tool for coding statistics, compatible with WakaTime. ([Source Code](https://github.com/muety/wakapi)) `GPL-3.0` `Go/Docker`
 - [Ziit](https://ziit.app) - The Swiss army knife of code time tracking (alternative to WakaTime). ([Source Code](https://github.com/0pandadev/ziit)) `AGPL-3.0` `Docker`
 
 

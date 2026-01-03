@@ -1,6 +1,6 @@
 ---
 project: element
-stars: 54239
+stars: 54238
 description: |-
     A Vue.js 2.0 UI Toolkit for Web
 url: https://github.com/ElemeFE/element

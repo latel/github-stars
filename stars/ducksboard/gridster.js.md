@@ -1,6 +1,6 @@
 ---
 project: gridster.js
-stars: 5998
+stars: 5996
 description: |-
     gridster.js is a jQuery plugin that makes building intuitive draggable layouts from elements spanning multiple columns 
 url: https://github.com/ducksboard/gridster.js

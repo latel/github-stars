@@ -1,6 +1,6 @@
 ---
 project: axios
-stars: 108399
+stars: 108424
 description: |-
     Promise based HTTP client for the browser and node.js
 url: https://github.com/axios/axios
@@ -73,6 +73,7 @@ url: https://github.com/axios/axios
   - [Interceptors](#interceptors)
     - [Multiple Interceptors](#multiple-interceptors)
   - [Handling Errors](#handling-errors)
+  - [Handling Timeouts](#handling-timeouts)
   - [Cancellation](#cancellation)
     - [AbortController](#abortcontroller)
     - [CancelToken 👎](#canceltoken-deprecated)
@@ -196,13 +197,13 @@ const axios = require('axios/dist/browser/axios.cjs'); // browser commonJS bundl
 Using jsDelivr CDN (ES5 UMD browser module):
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
 ```
 
 Using unpkg CDN:
 
 ```html
-<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
 ```
 
 ## Example
@@ -929,6 +930,27 @@ axios.get('/user/12345')
   });
 ```
 
+## Handling Timeouts
+
+```js
+async function fetchWithTimeout() {
+  try {
+    const response = await axios.get('https://example.com/data', {
+      timeout: 5000 // 5 seconds
+    });
+
+    console.log('Response:', response.data);
+
+  } catch (error) {
+    if (axios.isAxiosError(error) && error.code === 'ECONNABORTED') {
+      console.error('❌ Request timed out!');
+    } else {
+      console.error('❌ Error:', error.message);
+    }
+  }
+}
+```
+
 ## Cancellation
 
 ### AbortController
@@ -1090,7 +1112,7 @@ The server will handle it as:
 If your backend body-parser (like `body-parser` of `express.js`) supports nested objects decoding, you will get the same object on the server-side automatically
 
 ```js
-  var app = express();
+  const app = express();
 
   app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -1106,7 +1128,7 @@ If your backend body-parser (like `body-parser` of `express.js`) supports nested
 
 ### FormData
 
-To send the data as a `multipart/formdata` you need to pass a formData instance as a payload.
+To send the data as a `multipart/form-data` you need to pass a formData instance as a payload.
 Setting the `Content-Type` header is not required as Axios guesses it based on the payload type.
 
 ```js
