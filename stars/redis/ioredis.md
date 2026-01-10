@@ -1,6 +1,6 @@
 ---
 project: ioredis
-stars: 15159
+stars: 15162
 description: |-
     🚀 A robust, performance-focused, and full-featured Redis client for Node.js.
 url: https://github.com/redis/ioredis
@@ -805,6 +805,26 @@ const redis = new Redis({
 ```
 
 Set maxRetriesPerRequest to `null` to disable this behavior, and every command will wait forever until the connection is alive again (which is the default behavior before ioredis v4).
+
+### Blocking Command Timeout
+
+ioredis can apply a client-side timeout to blocking commands (such as `blpop`, `brpop`, `bzpopmin`, `bzmpop`, `blmpop`, `xread`, `xreadgroup`, etc.). This protects against scenarios where the TCP connection becomes a zombie (e.g., due to a silent network failure like a Docker network disconnect) and Redis never replies.
+
+This feature is **opt-in**. It is **disabled by default** and is only enabled
+when `blockingTimeout` is set to a positive number of milliseconds. If
+`blockingTimeout` is omitted, `0`, or negative (for example `-1`), ioredis
+does not arm any client-side timeouts for blocking commands and their
+behavior matches Redis exactly.
+
+```javascript
+const redis = new Redis({
+  blockingTimeout: 30000, // Enable blocking timeout protection
+});
+```
+
+When enabled:
+- For commands with a finite timeout (e.g., `blpop("key", 5)`), ioredis sets a client-side deadline based on the command's timeout plus a small grace period (`blockingTimeoutGrace`, default 100ms). If no reply arrives before the deadline, the command resolves with `null`—the same value Redis returns when a blocking command times out normally.
+- For commands that block forever (e.g., `timeout = 0` or `BLOCK 0`), the `blockingTimeout` value is used as a safety net.
 
 ### Reconnect on Error
 

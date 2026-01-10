@@ -1,6 +1,6 @@
 ---
 project: cool-retro-term
-stars: 24866
+stars: 24887
 description: |-
     A good looking terminal emulator which mimics the old cathode display...
 url: https://github.com/Swordfish90/cool-retro-term

@@ -1,6 +1,6 @@
 ---
 project: unfetch
-stars: 5722
+stars: 5723
 description: |-
     🐕 Bare minimum 500b fetch polyfill.
 url: https://github.com/developit/unfetch

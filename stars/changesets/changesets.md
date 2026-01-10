@@ -1,6 +1,6 @@
 ---
 project: changesets
-stars: 11211
+stars: 11233
 description: |-
     🦋       A way to manage your versioning and changelogs with a focus on monorepos
 url: https://github.com/changesets/changesets
@@ -83,6 +83,7 @@ To make releasing easier, you can use [this changesets github action](https://gi
 - [verdaccio](https://verdaccio.org)
 - [Chakra UI](https://chakra-ui.com)
 - [Astro](https://astro.build)
+- [Biome](https://biomejs.dev)
 - [SvelteKit](https://kit.svelte.dev)
 - [Hydrogen](https://hydrogen.shopify.dev)
 - [react-pdf](https://github.com/diegomura/react-pdf)
