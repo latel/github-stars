@@ -1,6 +1,6 @@
 ---
 project: OpenCC
-stars: 9416
+stars: 9424
 description: |-
     Conversion between Traditional and Simplified Chinese
 url: https://github.com/BYVoid/OpenCC
@@ -140,7 +140,9 @@ Document 文檔: https://byvoid.github.io/OpenCC/
 * Android: [android-opencc](https://github.com/qichuan/android-opencc)
 * PHP: [opencc4php](https://github.com/nauxliu/opencc4php)
 * Pure JavaScript: [opencc-js](https://github.com/nk2028/opencc-js)
-* WebAssembly: [wasm-opencc](https://github.com/oyyd/wasm-opencc)
+* WebAssembly:
+    * [opencc-wasm](https://www.npmjs.com/package/opencc-wasm) ([website](https://opencc.js.org/))
+    * [wasm-opencc](https://github.com/oyyd/wasm-opencc)
 * Browser Extension: [opencc-extension](https://github.com/tnychn/opencc-extension)
 * Go (Pure): [OpenCC for Go](https://github.com/longbridge/opencc)
 * Dart (native-assets): [opencc-dart](https://github.com/lindeer/opencc-dart)
@@ -186,7 +188,6 @@ build.cmd
 
 ```bash
 bazel build //:opencc
-bazel test --test_output=all //src/... //data/... //test/...
 ```
 
 ### Test 測試
@@ -201,6 +202,12 @@ make test
 
 ```bash
 test.cmd
+```
+
+#### Test with Bazel
+
+```bash
+bazel test --test_output=all //src/... //data/... //python/... //test/...
 ```
 
 ### Benchmark 基準測試
@@ -246,6 +253,7 @@ Please update if your project is using OpenCC.
 * [ibus-libpinyin](https://github.com/libpinyin/ibus-libpinyin)
 * [alfred-chinese-converter](https://github.com/amowu/alfred-chinese-converter)
 * [GoldenDict](https://github.com/goldendict/goldendict)
+* [China Biographical Database Project (CBDB)](https://cbdb.hsites.harvard.edu/)
 
 ## License 許可協議
 
@@ -314,6 +322,7 @@ All these libraries are statically linked by default.
 * [Prcuvu](https://github.com/Prcuvu)
 * [Tony Able](https://github.com/TonyAble)
 * [Xiao Liang](https://github.com/yxliang01)
+* [Frank Lin](https://github.com/frankslin)
 
 Please feel free to update this list if you have contributed OpenCC.
 

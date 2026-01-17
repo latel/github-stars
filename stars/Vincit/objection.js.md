@@ -1,6 +1,6 @@
 ---
 project: objection.js
-stars: 7357
+stars: 7356
 description: |-
     An SQL-friendly ORM for Node.js
 url: https://github.com/Vincit/objection.js

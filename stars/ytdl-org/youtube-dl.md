@@ -1,6 +1,6 @@
 ---
 project: youtube-dl
-stars: 139411
+stars: 139474
 description: |-
     Command-line program to download videos from YouTube.com and other video sites
 url: https://github.com/ytdl-org/youtube-dl
