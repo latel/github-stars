@@ -1,6 +1,6 @@
 ---
 project: browserslist
-stars: 13482
+stars: 13486
 description: |-
     🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env
 url: https://github.com/browserslist/browserslist
@@ -262,7 +262,7 @@ You can specify the browser and Node.js versions by queries (case insensitive):
   * `last 2 node major versions`: select 2 latest major-version Node.js releases.
   * `current node`: Node.js version used by Browserslist right now.
   * `maintained node versions`: all Node.js versions, which are [still maintained]
-    by Node.js Foundation.
+    by the Node.js team.
 * Browsers versions:
   * `iOS 7`: the iOS browser version 7 directly. Note, that `op_mini`
     has special version `all`.
