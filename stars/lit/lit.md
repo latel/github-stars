@@ -1,6 +1,6 @@
 ---
 project: lit
-stars: 21132
+stars: 21167
 description: |-
     Lit is a simple library for building fast, lightweight web components.
 url: https://github.com/lit/lit

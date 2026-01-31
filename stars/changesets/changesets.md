@@ -1,6 +1,6 @@
 ---
 project: changesets
-stars: 11284
+stars: 11322
 description: |-
     🦋       A way to manage your versioning and changelogs with a focus on monorepos
 url: https://github.com/changesets/changesets
@@ -105,6 +105,7 @@ To make releasing easier, you can use [this changesets github action](https://gi
 - [Apollo Client](https://github.com/apollographql/apollo-client)
 - [Adobe Spectrum CSS](https://github.com/adobe/spectrum-css)
 - [Adobe Spectrum Web Components](https://github.com/adobe/spectrum-web-components)
+- [React Email](https://react.email)
 
 <!-- NOTE: we currently only accept new entries with at least 1000 GitHub stars -->
 
