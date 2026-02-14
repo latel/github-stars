@@ -1,6 +1,6 @@
 ---
 project: simple-keyboard
-stars: 2409
+stars: 2411
 description: |-
     Javascript Virtual Keyboard - Customizable, responsive and lightweight
 url: https://github.com/hodgef/simple-keyboard
