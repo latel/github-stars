@@ -1,6 +1,6 @@
 ---
 project: imax.im
-stars: 364
+stars: 365
 description: |-
     :clapper: Source code of IMAX.im
 url: https://github.com/huacnlee/imax.im

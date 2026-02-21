@@ -1,6 +1,6 @@
 ---
 project: eslint-plugin-unicorn
-stars: 4925
+stars: 4931
 description: |-
     More than 100 powerful ESLint rules
 url: https://github.com/sindresorhus/eslint-plugin-unicorn
@@ -73,6 +73,7 @@ export default [
 | [consistent-empty-array-spread](docs/rules/consistent-empty-array-spread.md)                     | Prefer consistent types when spreading a ternary in an array literal.                                                                                                                                             | ✅    | 🔧 |    |
 | [consistent-existence-index-check](docs/rules/consistent-existence-index-check.md)               | Enforce consistent style for element existence checks with `indexOf()`, `lastIndexOf()`, `findIndex()`, and `findLastIndex()`.                                                                                    | ✅ ☑️ | 🔧 |    |
 | [consistent-function-scoping](docs/rules/consistent-function-scoping.md)                         | Move function definitions to the highest possible scope.                                                                                                                                                          | ✅    |    |    |
+| [consistent-template-literal-escape](docs/rules/consistent-template-literal-escape.md)           | Enforce consistent style for escaping `${` in template literals.                                                                                                                                                  | ✅    | 🔧 |    |
 | [custom-error-definition](docs/rules/custom-error-definition.md)                                 | Enforce correct `Error` subclassing.                                                                                                                                                                              |      | 🔧 |    |
 | [empty-brace-spaces](docs/rules/empty-brace-spaces.md)                                           | Enforce no spaces between braces.                                                                                                                                                                                 | ✅    | 🔧 |    |
 | [error-message](docs/rules/error-message.md)                                                     | Enforce passing a `message` value when creating a built-in error.                                                                                                                                                 | ✅ ☑️ |    |    |
