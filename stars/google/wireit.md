@@ -1,6 +1,6 @@
 ---
 project: wireit
-stars: 6392
+stars: 6395
 description: |-
     Wireit upgrades your npm/pnpm/yarn scripts to make them smarter and more efficient.
 url: https://github.com/google/wireit
