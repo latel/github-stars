@@ -1,6 +1,6 @@
 ---
 project: theme.park
-stars: 3012
+stars: 3013
 description: |-
     A collection of themes/skins for 50 selfhosted apps!
 url: https://github.com/themepark-dev/theme.park

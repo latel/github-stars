@@ -1,6 +1,6 @@
 ---
 project: OpenCC
-stars: 9494
+stars: 9508
 description: |-
     Conversion between Traditional and Simplified Chinese
 url: https://github.com/BYVoid/OpenCC
@@ -55,9 +55,7 @@ Discussion (Telegram): https://t.me/open_chinese_convert
 
 ### Online demo 線上轉換展示
 
-Warning: **This is NOT an API.** You will be banned if you make calls programmatically.
-
-https://opencc.byvoid.com/
+https://opencc.js.org/converter?config=s2t
 
 ### Node.js
 
