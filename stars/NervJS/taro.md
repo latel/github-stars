@@ -1,6 +1,6 @@
 ---
 project: taro
-stars: 37334
+stars: 37346
 description: |-
     开放式跨端跨框架解决方案，支持使用 React/Vue 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。  https://taro.zone/
 url: https://github.com/NervJS/taro

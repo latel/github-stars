@@ -1,6 +1,6 @@
 ---
 project: snapdom
-stars: 7595
+stars: 7608
 description: |-
     SnapDOM: DOM Capture Engine – Fast and Accurate HTML Conversion
 url: https://github.com/zumerlab/snapdom
@@ -17,7 +17,7 @@ url: https://github.com/zumerlab/snapdom
     <img alt="NPM version" src="https://img.shields.io/npm/v/@zumer/snapdom?style=flat-square&label=Version">
   </a>
   <a href="https://www.npmjs.com/package/@zumer/snapdom">
-    <img alt="NPM version" src="https://img.shields.io/npm/v/@zumer/snapdom/dev?style=flat-square&label=Dev">
+    <img alt="NPM weekly downloads" src="https://img.shields.io/npm/dw/@zumer/snapdom?style=flat-square&label=Downloads">
   </a>
   <a href="https://github.com/zumerlab/snapdom/graphs/contributors">
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/zumerlab/snapdom?style=flat-square&label=Contributors">
@@ -58,15 +58,76 @@ It converts any DOM subtree into a self-contained representation that can be exp
 [https://snapdom.dev](https://snapdom.dev)
 
 
+## Quick Start
+
+**Capture any DOM element to PNG in one line:**
+
+```js
+import { snapdom } from '@zumer/snapdom';
+
+const img = await snapdom.toPng(document.querySelector('#card'));
+document.body.appendChild(img);
+```
+
+**Reusable capture** (one clone, multiple exports):
+
+```js
+const result = await snapdom(document.querySelector('#card'));
+await result.toPng();      // → HTMLImageElement
+await result.toSvg();      // → SVG as Image
+await result.download({ format: 'jpg', filename: 'card.jpg' });
+```
+
+---
+
+## Capture Flow
+
+SnapDOM transforms your DOM element through these stages:
+
+```mermaid
+flowchart LR
+    subgraph Input
+        A[DOM Element]
+    end
+    
+    subgraph Capture
+        B[Clone] --> C[Styles & Pseudo]
+        C --> D[Images & Backgrounds]
+        D --> E[Fonts]
+        E --> F[SVG foreignObject]
+    end
+    
+    subgraph Output
+        F --> G[data:image/svg+xml]
+        G --> H[toPng / toSvg / toBlob / download]
+    end
+    
+    A --> B
+```
+
+| Stage | What happens |
+|-------|--------------|
+| **Clone** | Deep clone with styles, Shadow DOM, iframes. Exclude/filter nodes. |
+| **Styles & Pseudo** | Inline `::before`/`::after` as elements, resolve `counter()`/`counters()`. |
+| **Images & Backgrounds** | Fetch and inline external images/backgrounds as data URLs. |
+| **Fonts** | Embed `@font-face` (optional) and icon fonts. |
+| **SVG** | Wrap clone in `<foreignObject>`, serialize to `data:image/svg+xml`. |
+| **Export** | Convert SVG to PNG/JPG/WebP/Blob or trigger download. |
+
+Plugin hooks: `beforeSnap` → `beforeClone` → `afterClone` → `beforeRender` → `afterRender` → `beforeExport` → `afterExport`.
+
+
 ## Table of Contents
 
+- [Quick Start](#quick-start)
+- [Capture Flow](#capture-flow)
 - [Installation](#installation)
   - [NPM / Yarn (stable)](#npm--yarn-stable)
   - [NPM / Yarn (dev builds)](#npm--yarn-dev-builds)
   - [CDN (stable)](#cdn-stable)
   - [CDN (dev builds)](#cdn-dev-builds)
-- [Build Outputs & Tree-Shaking](#build-outputs--tree-shaking)
-- [Basic usage](#basic-usage)
+- [Build Outputs](#build-outputs--tree-shaking)
+- [Usage](#usage)
   - [Reusable capture](#reusable-capture)
   - [One-step shortcuts](#one-step-shortcuts)
 - [API](#api)
@@ -152,68 +213,59 @@ yarn add @zumer/snapdom@dev
 </script>
 ```
 
-## Build Outputs & Tree-Shaking
+## Build Outputs
 
-SnapDOM ships multiple build variants, but using it is simple.
+| Variant | File | Use case |
+|---------|------|----------|
+| **ESM** (tree-shakeable) | `dist/snapdom.mjs` | Bundlers (Vite, webpack), `import` |
+| **IIFE** (global) | `dist/snapdom.js` | Script tag, legacy `require` |
 
-### npm usage → ESM modular build (tree-shakeable)
-
-When you import SnapDOM in a project with a bundler:
-
+**Bundler (npm):**
 ```js
-import { snapdom } from '@zumer/snapdom';
+import { snapdom } from '@zumer/snapdom';  // → dist/snapdom.mjs
 ```
 
-your environment automatically loads:
-
-```sh
-dist/modules/snapdom.js
-```
-
-This is the modular ESM build, enabling:
-
-- Tree-shaking
-
-- Code-splitting
-
-- Lazy loading of exporters (toPng, toJpg, toWebp, etc.)
-
-You do not need to configure anything; bundlers pick this build automatically.
-
-### Script tag usage → Global build
-
+**Script tag (CDN):**
 ```html
 <script src="https://unpkg.com/@zumer/snapdom/dist/snapdom.js"></script>
-<script>
-  snapdom.toPng(document.body).then(img => {
-    document.body.appendChild(img);
-  });
-</script>
+<script> snapdom.toPng(document.body).then(img => document.body.appendChild(img)); </script>
 ```
 
-This loads the monolithic global build and exposes snapdom on window.
+**Subpath imports** (lighter bundle if you only need one):
+```js
+import { preCache } from '@zumer/snapdom/preCache';
+import { plugins } from '@zumer/snapdom/plugins';
+```
 
 
-## Basic usage
+## Usage
+
+| Pattern | When to use |
+|---------|-------------|
+| **Reusable** `snapdom(el)` | One clone → many exports (PNG + JPG + download). |
+| **Shortcuts** `snapdom.toPng(el)` | Single export, less code. |
 
 ### Reusable capture
+
+Capture once, export many times (no re-clone):
+
 ```js
 const el = document.querySelector('#target');
 const result = await snapdom(el);
 
 const img = await result.toPng();
 document.body.appendChild(img);
-
 await result.download({ format: 'jpg', filename: 'my-capture.jpg' });
 ```
 
 ### One-step shortcuts
-```js
-const el = document.querySelector('#target');
-const png = await snapdom.toPng(el);
-document.body.appendChild(png);
 
+Direct export when you need a single format:
+
+```js
+const png = await snapdom.toPng(el);
 const blob = await snapdom.toBlob(el);
+document.body.appendChild(png);
 ```
 
 ## API
@@ -535,17 +587,19 @@ const out = await snapdom(element, {
 
 ### Plugin Lifecycle Hooks
 
-| Hook                           | Purpose                                                                              |
-| ------------------------------ | ------------------------------------------------------------------------------------ |
-| `beforeSnap(context)`          | Before any clone/style work. Ideal for adjusting global capture options.             |
-| `beforeClone(context)`         | Before DOM cloning. Can modify live DOM (use carefully).                             |
-| `afterClone(context)`          | After the element subtree has been cloned. Safe to modify styles in the cloned tree. |
-| `beforeRender(context)`        | Right before SVG/dataURL serialization.                                              |
-| `afterRender(context)`         | After serialization (you can inspect `context.svgString` or `context.dataURL`).      |
-| `beforeExport(context)`        | Before each export call (`toPng`, `toSvg`, etc.).                                    |
-| `afterExport(context, result)` | After each export call — can transform the returned result.                          |
-| `afterSnap(context)`           | Runs **once**, after the **first export** finishes. Perfect for cleanup.             |
-| `defineExports(context)`       | Returns a map of **custom exporters**, e.g. `{ pdf: async (ctx, opts) => Blob }`.    |
+Hooks run in capture order (see [Capture Flow](#capture-flow)):
+
+| Hook | Stage | Purpose |
+|------|-------|---------|
+| `beforeSnap` | Start | Adjust options before any work. |
+| `beforeClone` | Pre-clone | Before DOM clone (modify live DOM carefully). |
+| `afterClone` | Post-clone | Modify cloned tree safely (e.g. inject overlay). |
+| `beforeRender` | Pre-serialize | Right before SVG → data URL. |
+| `afterRender` | Post-serialize | Inspect `context.svgString` / `context.dataURL`. |
+| `beforeExport` | Per export | Before each `toPng`, `toSvg`, etc. |
+| `afterExport` | Per export | Transform returned result. |
+| `afterSnap` | Once | After first export; cleanup. |
+| `defineExports` | Setup | Add custom exporters (e.g. `toPdf`). |
 
 > Returned values from `afterExport` are chained to the next plugin (transform pipeline).
 
@@ -794,35 +848,30 @@ Feel free to share suggestions or feedback in [GitHub Discussions](https://githu
 
 ## Development
 
-To contribute or build snapDOM locally:
+**Source layout:**
+- `src/api/` – Public API (`snapdom`, `preCache`)
+- `src/core/` – Capture pipeline, clone, prepare, plugins
+- `src/modules/` – Images, fonts, pseudo-elements, backgrounds, SVG
+- `src/exporters/` – toPng, toSvg, toBlob, etc.
+- `dist/` – Build output (`snapdom.js`, `snapdom.mjs`, `preCache.mjs`, `plugins.mjs`)
 
+**Build:**
 ```sh
-# Clone the repository
 git clone https://github.com/zumerlab/snapdom.git
 cd snapdom
-
-# Switch to dev branch
 git checkout dev
-
-# Install dependencies
 npm install
-
-# Compile the library (ESM, CJS, and minified versions)
 npm run compile
+```
 
-# Install playwright browsers (necessary for running tests)
-npx playwright install
-
-# Run tests
+**Test:**
+```sh
+npx playwright install   # Required for browser tests
 npm test
-
-# Run Benchmarks
 npm run test:benchmark
 ```
 
-The main entry point is in `src/`, and output bundles are generated in the `dist/` folder.
-
-For detailed contribution guidelines, please see [CONTRIBUTING](https://github.com/zumerlab/snapdom/blob/main/CONTRIBUTING.md).
+For detailed guidelines, see [CONTRIBUTING](https://github.com/zumerlab/snapdom/blob/main/CONTRIBUTING.md).
 
 
 ## Contributors
@@ -832,27 +881,31 @@ For detailed contribution guidelines, please see [CONTRIBUTING](https://github.c
 <a href="https://github.com/tinchox5" title="tinchox5"><img src="https://avatars.githubusercontent.com/u/11557901?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="tinchox5"/></a>
 <a href="https://github.com/Jarvis2018" title="Jarvis2018"><img src="https://avatars.githubusercontent.com/u/36788851?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="Jarvis2018"/></a>
 <a href="https://github.com/tarwin" title="tarwin"><img src="https://avatars.githubusercontent.com/u/646149?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="tarwin"/></a>
+<a href="https://github.com/Amyuan23" title="Amyuan23"><img src="https://avatars.githubusercontent.com/u/25892910?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="Amyuan23"/></a>
+<a href="https://github.com/airamhr9" title="airamhr9"><img src="https://avatars.githubusercontent.com/u/57371081?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="airamhr9"/></a>
+<a href="https://github.com/FlavioLimaMindera" title="FlavioLimaMindera"><img src="https://avatars.githubusercontent.com/u/96424442?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="FlavioLimaMindera"/></a>
 <a href="https://github.com/jswhisperer" title="jswhisperer"><img src="https://avatars.githubusercontent.com/u/1177690?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="jswhisperer"/></a>
 <a href="https://github.com/K1ender" title="K1ender"><img src="https://avatars.githubusercontent.com/u/146767945?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="K1ender"/></a>
-<a href="https://github.com/Amyuan23" title="Amyuan23"><img src="https://avatars.githubusercontent.com/u/25892910?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="Amyuan23"/></a>
+<a href="https://github.com/kohaiy" title="kohaiy"><img src="https://avatars.githubusercontent.com/u/15622127?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="kohaiy"/></a>
 <a href="https://github.com/17biubiu" title="17biubiu"><img src="https://avatars.githubusercontent.com/u/13295895?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="17biubiu"/></a>
 <a href="https://github.com/av01d" title="av01d"><img src="https://avatars.githubusercontent.com/u/6247646?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="av01d"/></a>
 <a href="https://github.com/CHOYSEN" title="CHOYSEN"><img src="https://avatars.githubusercontent.com/u/25995358?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="CHOYSEN"/></a>
 <a href="https://github.com/pedrocateexte" title="pedrocateexte"><img src="https://avatars.githubusercontent.com/u/207524750?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="pedrocateexte"/></a>
 <a href="https://github.com/domialex" title="domialex"><img src="https://avatars.githubusercontent.com/u/4694217?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="domialex"/></a>
 <a href="https://github.com/elliots" title="elliots"><img src="https://avatars.githubusercontent.com/u/622455?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="elliots"/></a>
+<a href="https://github.com/stypr" title="stypr"><img src="https://avatars.githubusercontent.com/u/6625978?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="stypr"/></a>
 <a href="https://github.com/mon-jai" title="mon-jai"><img src="https://avatars.githubusercontent.com/u/91261297?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="mon-jai"/></a>
 <a href="https://github.com/sharuzzaman" title="sharuzzaman"><img src="https://avatars.githubusercontent.com/u/7421941?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="sharuzzaman"/></a>
 <a href="https://github.com/simon1uo" title="simon1uo"><img src="https://avatars.githubusercontent.com/u/60037549?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="simon1uo"/></a>
 <a href="https://github.com/titoBouzout" title="titoBouzout"><img src="https://avatars.githubusercontent.com/u/64156?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="titoBouzout"/></a>
+<a href="https://github.com/ZiuChen" title="ZiuChen"><img src="https://avatars.githubusercontent.com/u/64892985?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="ZiuChen"/></a>
 <a href="https://github.com/harshasiddartha" title="harshasiddartha"><img src="https://avatars.githubusercontent.com/u/147021873?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="harshasiddartha"/></a>
+<a href="https://github.com/karasHou" title="karasHou"><img src="https://avatars.githubusercontent.com/u/27048083?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="karasHou"/></a>
 <a href="https://github.com/jhbae200" title="jhbae200"><img src="https://avatars.githubusercontent.com/u/20170610?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="jhbae200"/></a>
 <a href="https://github.com/xiaobai-web715" title="xiaobai-web715"><img src="https://avatars.githubusercontent.com/u/81091224?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="xiaobai-web715"/></a>
 <a href="https://github.com/miusuncle" title="miusuncle"><img src="https://avatars.githubusercontent.com/u/7549857?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="miusuncle"/></a>
 <a href="https://github.com/rbbydotdev" title="rbbydotdev"><img src="https://avatars.githubusercontent.com/u/101137670?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="rbbydotdev"/></a>
 <a href="https://github.com/zhanghaotian2018" title="zhanghaotian2018"><img src="https://avatars.githubusercontent.com/u/169218899?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="zhanghaotian2018"/></a>
-<a href="https://github.com/kohaiy" title="kohaiy"><img src="https://avatars.githubusercontent.com/u/15622127?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="kohaiy"/></a>
-<a href="https://github.com/fu050409" title="fu050409"><img src="https://avatars.githubusercontent.com/u/46275354?v=4&s=100" style="border-radius:10px; width:60px; height:60px; object-fit:cover; margin:5px;" alt="fu050409"/></a>
 </p>
 <!-- CONTRIBUTORS:END -->
 
