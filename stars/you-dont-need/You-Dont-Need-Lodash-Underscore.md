@@ -1,6 +1,6 @@
 ---
 project: You-Dont-Need-Lodash-Underscore
-stars: 19159
+stars: 19161
 description: |-
     List of JavaScript methods which you can use natively + ESLint Plugin
 url: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
@@ -1432,7 +1432,7 @@ Creates an object composed of keys generated from the results of running each el
   // keyBy for array and object
   const collectionKeyBy = (collection, key) => {
     const c = collection || {};
-    return c.isArray() ? keyBy(c, key) : keyBy(Object.values(c), key);
+    return Array.isArray(c) ? keyBy(c, key) : keyBy(Object.values(c), key);
   }
   ```
 

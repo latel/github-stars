@@ -1,6 +1,6 @@
 ---
 project: OpenCC
-stars: 9523
+stars: 9544
 description: |-
     Conversion between Traditional and Simplified Chinese
 url: https://github.com/BYVoid/OpenCC
@@ -42,14 +42,16 @@ Discussion (Telegram): https://t.me/open_chinese_convert
 * [Fedora](https://packages.fedoraproject.org/pkgs/opencc/opencc/)
 * [Arch Linux](https://archlinux.org/packages/extra/x86_64/opencc/)
 * [macOS](https://formulae.brew.sh/formula/opencc)
+* WinGet (`winget install BYVoid.OpenCC`) - WIP
 * [Bazel](https://registry.bazel.build/modules/opencc)
 * [Node.js](https://npmjs.org/package/opencc)
 * [Python](https://pypi.org/project/OpenCC/)
 
 ### Prebuilt 預編譯
 
-* Windows (x86_64): [Latest build](https://ci.appveyor.com/api/projects/Carbo/opencc/artifacts/OpenCC.zip?branch=master&job=Environment:%20nodejs_version=none;%20Platform:%20x64)
-* Windows (x86): [Latest build](https://ci.appveyor.com/api/projects/Carbo/opencc/artifacts/OpenCC.zip?branch=master&job=Environment:%20nodejs_version=none;%20Platform:%20x86)
+* Windows (x86_64): [OpenCC-1.2.1-alpha1](https://opencc.byvoid.com/opencc-winget-release/OpenCC-1.2.1-alpha1-windows-x64-portable.zip)
+
+This is a Windows release intended for WinGet distribution. For details, see [doc/windows-winget-release.md](doc/windows-winget-release.md).
 
 ## Usage 使用
 
