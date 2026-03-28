@@ -1,6 +1,6 @@
 ---
 project: sanitize.css
-stars: 5288
+stars: 5292
 description: |-
     A best-practices CSS foundation
 url: https://github.com/csstools/sanitize.css
@@ -443,7 +443,7 @@ user has requested this at a system level.
 
 ### Reduce Motion Features
 
-##### Animations, scrolling effects, and transitions are reduced in all browsers
+##### Animations, scrolling effects, transitions and view transitions are reduced in all browsers
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -457,6 +457,10 @@ user has requested this at a system level.
     scroll-behavior: auto !important;
     transition-delay: 0s !important;
     transition-duration: 0s !important;
+  }
+
+  @view-transition {
+    navigation: none !important;
   }
 }
 ```

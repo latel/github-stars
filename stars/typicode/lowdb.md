@@ -1,6 +1,6 @@
 ---
 project: lowdb
-stars: 22499
+stars: 22504
 description: |-
     Simple and fast JSON database
 url: https://github.com/typicode/lowdb
@@ -61,6 +61,12 @@ It's that simple. `db.data` is just a JavaScript object, no magic.
 <p align="center">
   <a href="https://mockend.com/" target="_blank">
     <img src="https://jsonplaceholder.typicode.com/mockend.svg" height="70px">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://serpapi.com/?utm_source=typicode" target="_blank">
+    <img src="https://github.com/user-attachments/assets/52b3039d-1e4c-4c68-951c-93f0f1e73611" height="70px">
   </a>
 </p>
 
