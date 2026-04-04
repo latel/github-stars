@@ -1,6 +1,6 @@
 ---
 project: eslint-plugin-unicorn
-stars: 4973
+stars: 4980
 description: |-
     More than 100 powerful ESLint rules
 url: https://github.com/sindresorhus/eslint-plugin-unicorn
@@ -16,6 +16,8 @@ url: https://github.com/sindresorhus/eslint-plugin-unicorn
 You might want to check out [XO](https://github.com/xojs/xo), which includes this plugin.
 
 [**Propose or contribute a new rule ➡**](.github/contributing.md)
+
+**Fully AI-generated pull requests are not accepted. You can use AI, but should be verified and cleaned up by a human. Only Opus 4.6+ (high-effort) and Codex 5.4+ (extra high) are accepted models. Preferably created with Opus and verified by Codex.**
 
 ## Install
 
