@@ -1,6 +1,6 @@
 ---
 project: Karabiner-archived
-stars: 3791
+stars: 3789
 description: |-
     Karabiner (KeyRemap4MacBook) is a powerful utility for keyboard customization.
 url: https://github.com/pqrs-org/Karabiner-archived
