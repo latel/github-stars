@@ -1,6 +1,6 @@
 ---
 project: rasterizeHTML.js
-stars: 2588
+stars: 2579
 description: |-
     Renders HTML into the browser's canvas
 url: https://github.com/cburgmer/rasterizeHTML.js

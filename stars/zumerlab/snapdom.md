@@ -1,8 +1,8 @@
 ---
 project: snapdom
-stars: 7696
+stars: 7707
 description: |-
-    SnapDOM: Next-generation DOM capture engine — fast, modular, extensible.
+    SnapDOM: Next-generation DOM capture to whatever engine — fast, modular, extensible.
 url: https://github.com/zumerlab/snapdom
 ---
 
