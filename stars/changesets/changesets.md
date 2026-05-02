@@ -1,13 +1,16 @@
 ---
 project: changesets
-stars: 11722
+stars: 11766
 description: |-
     🦋       A way to manage your versioning and changelogs with a focus on monorepos
 url: https://github.com/changesets/changesets
 ---
 
 <p align="center">
-  <img src="./assets/images/changesets-banner-light.png" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/images/changesets-banner-dark.png">
+    <img alt="Changesets banner" src="./assets/images/changesets-banner-light.png">
+  </picture>
 </p>
 
 <p align="center">
