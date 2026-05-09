@@ -1,8 +1,8 @@
 ---
 project: snapdom
-stars: 7733
+stars: 7751
 description: |-
-    SnapDOM: DOM to anything engine — fast, modular, extensible.
+    High-performance engine for capturing, modifying, and converting DOM elements into any format.
 url: https://github.com/zumerlab/snapdom
 ---
 
