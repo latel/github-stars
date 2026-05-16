@@ -1,6 +1,6 @@
 ---
 project: OpenCC
-stars: 9669
+stars: 9683
 description: |-
     Library for conversion between Traditional and Simplified Chinese
 url: https://github.com/BYVoid/OpenCC
@@ -21,9 +21,9 @@ url: https://github.com/BYVoid/OpenCC
 
 ![OpenCC](https://opencc.byvoid.com/img/opencc.png)
 
-Open Chinese Convert (OpenCC, 開放中文轉換) is an opensource project for conversions between Traditional Chinese, Simplified Chinese and Japanese Kanji (Shinjitai). It supports character-level and phrase-level conversion, character variant conversion and regional idioms among Mainland China, Taiwan and Hong Kong. This is not translation tool between Mandarin and Cantonese, etc.
+Open Chinese Convert (OpenCC, 開放中文轉換) is an open source project for conversions between Traditional Chinese, Simplified Chinese and Japanese Kanji (Shinjitai). It supports character-level and phrase-level conversion, character variant handling, and regional vocabulary variants across Mainland China, Taiwan and Hong Kong. This is not a translation tool between Mandarin and Cantonese, etc.
 
-中文簡繁轉換開源項目，支持詞彙級別的轉換、異體字轉換和地區習慣用詞轉換（中國大陸、台灣、香港、日本新字體）。不提供普通話與粵語的轉換。
+中文簡繁轉換開源項目，支持詞彙級別的轉換、異體字轉換和地區習慣用詞轉換（中國大陸、台灣、香港）及日本新字體轉換。不提供普通話與粵語之間的轉換。
 
 Discussion (Telegram): https://t.me/open_chinese_convert
 
@@ -35,6 +35,8 @@ Discussion (Telegram): https://t.me/open_chinese_convert
 * 支持中國大陸、台灣、香港異體字和地區習慣用詞轉換，如「裏」「裡」、「鼠標」「滑鼠」。
 * 詞庫和函數庫完全分離，可以自由修改、導入、擴展。
 
+詳情參閱[OpenCC 設計思想](./DESIGN_PRINCIPLES.md)。
+
 ## Installation 安裝
 
 ### Package Managers 包管理器
@@ -45,17 +47,19 @@ Discussion (Telegram): https://t.me/open_chinese_convert
 * [Arch Linux](https://archlinux.org/packages/extra/x86_64/opencc/)
 * [macOS (Homebrew)](https://formulae.brew.sh/formula/opencc)
 * [WinGet](https://github.com/microsoft/winget-pkgs/tree/master/manifests/b/BYVoid/OpenCC)
-    * 使用 `winget install BYVoid.OpenCC` 命令可直接安裝 opencc.exe 應用程式
+    * 使用 `winget install opencc` 命令可直接安裝 opencc.exe 應用程式，含 Jieba 分詞插件
 * [Bazel](https://registry.bazel.build/modules/opencc)
 * [Node.js](https://npmjs.org/package/opencc)
-    * 使用 `npm install -g opencc` 命令可直接安裝 OpenCC Node CLI 工具 
+    * 使用 `npm install -g opencc` 命令可安裝 OpenCC Node.js CLI
+    * 使用 `npm install -g opencc opencc-jieba` 命令可同時安裝 OpenCC Node.js CLI 及 Jieba 分詞插件
 * [Python](https://pypi.org/project/OpenCC/)
 * [More (Repology)](https://repology.org/project/opencc/versions)
 
-### Prebuilt 預編譯
+### Prebuilt binaries 預編譯二進位檔
 
 * Windows (x86_64): [OpenCC-1.3.1](https://github.com/BYVoid/OpenCC/releases/download/ver.1.3.1/OpenCC-1.3.1-windows-x64-portable.zip) ([SHA-256](https://github.com/BYVoid/OpenCC/releases/download/ver.1.3.1/OpenCC-1.3.1-windows-x64-portable.zip.sha256))
-    This is a Windows release intended for WinGet distribution. For details, see [doc/windows-winget-release.md](doc/windows-winget-release.md).
+    * This Windows release is available from WinGet. For details, see [doc/windows-winget-release.md](doc/windows-winget-release.md).
+    * Requires Microsoft Visual C++ Redistributable for Visual Studio 2015-2026. Download the latest version from [Microsoft](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version).
 * Debian/Ubuntu (amd64):
     * [opencc_1.3.1_amd64.deb](https://github.com/BYVoid/OpenCC/releases/download/ver.1.3.1/opencc_1.3.1_amd64.deb)
     * [opencc-jieba_1.3.1_amd64.deb](https://github.com/BYVoid/OpenCC/releases/download/ver.1.3.1/opencc-jieba_1.3.1_amd64.deb)
@@ -70,7 +74,7 @@ https://opencc.js.org/converter?config=s2t
 
 `npm install opencc`
 
-The npm package supports Node.js `>=20.17 <26`. It uses bundled Node-API
+The npm package supports Node.js `>=20.17`. It uses bundled Node-API
 prebuilds when available and falls back to a local `node-gyp` build when the
 current platform does not have a matching prebuild.
 
@@ -197,10 +201,10 @@ Rules:
 * `tw2s.json` **Traditional Chinese (Taiwan Standard)** to **Simplified Chinese** / **台灣正體** 到 **簡體**
 * `s2hk.json` **Simplified Chinese** to **Traditional Chinese (Hong Kong variant)** / **簡體** 到 **香港繁體**
 * `hk2s.json` **Traditional Chinese (Hong Kong variant)** to **Simplified Chinese** / **香港繁體** 到 **簡體**
-* `s2twp.json` **Simplified Chinese** to **Traditional Chinese (Taiwan Standard)** with Taiwanese idiom / **簡體** 到 **台灣正體** 並轉換爲台灣常用詞彙
-* `tw2sp.json` **Traditional Chinese (Taiwan Standard)** to **Simplified Chinese** with Mainland Chinese idiom / **台灣正體** 到 **簡體** 並轉換爲中國大陸常用詞彙
+* `s2twp.json` **Simplified Chinese** to **Traditional Chinese (Taiwan Standard, with Taiwan Phrases)** / **簡體** 到 **台灣正體（含台灣常用詞彙）**
+* `tw2sp.json` **Traditional Chinese (Taiwan Standard)** to **Simplified Chinese (Mainland China Phrases)** / **台灣正體** 到 **簡體（含中國大陸常用詞彙）**
 * `t2tw.json` **Traditional Chinese (OpenCC Standard)** to **Traditional Chinese (Taiwan Standard)** / **OpenCC 標準繁體** 到 **台灣正體**
-* `tw2t.json` **Traditional Chinese (Taiwan standard)** to **Traditional Chinese (OpenCC Standard)** / **台灣正體** 到 **OpenCC 標準繁體**
+* `tw2t.json` **Traditional Chinese (Taiwan Standard)** to **Traditional Chinese (OpenCC Standard)** / **台灣正體** 到 **OpenCC 標準繁體**
 * `t2hk.json` **Traditional Chinese (OpenCC Standard)** to **Traditional Chinese (Hong Kong variant)** / **OpenCC 標準繁體** 到 **香港繁體**
 * `hk2t.json` **Traditional Chinese (Hong Kong variant)** to **Traditional Chinese (OpenCC Standard)** / **香港繁體** 到 **OpenCC 標準繁體**
 * `t2jp.json` **Traditional Chinese Characters (Kyūjitai)** to **New Japanese Kanji (Shinjitai)** / **OpenCC 標準繁體（日文舊字體）** 到 **日文新字體**
@@ -299,43 +303,7 @@ bazel test --test_output=all //src/... //data/... //python/... //test/...
 make benchmark
 ```
 
-Example results (from Github CI, commit ID 9e80d5d, 2026-04-16, CMake macos-latest):
-
-```
--------------------------------------------------------------------------
-Benchmark                               Time             CPU   Iterations
--------------------------------------------------------------------------
-BM_Initialization/hk2s                868 us          868 us          665
-BM_Initialization/hk2t                139 us          139 us         5059
-BM_Initialization/jp2t                203 us          203 us         3448
-BM_Initialization/s2hk              26201 us        26200 us           27
-BM_Initialization/s2t               26385 us        26382 us           27
-BM_Initialization/s2tw              27108 us        27108 us           27
-BM_Initialization/s2twp             26446 us        26445 us           25
-BM_Initialization/s2twp_jieba      142754 us       141974 us            5
-BM_Initialization/t2hk               66.7 us         66.7 us        10519
-BM_Initialization/t2jp                166 us          166 us         4215
-BM_Initialization/t2s                 797 us          797 us          883
-BM_Initialization/t2tw               58.1 us         58.1 us        12075
-BM_Initialization/tw2s                845 us          845 us          831
-BM_Initialization/tw2sp              1004 us         1004 us          697
-BM_Initialization/tw2t               93.3 us         93.3 us         7492
-BM_ConvertLongText/s2t                327 ms          327 ms            2 bytes_per_second=5.45069M/s
-BM_ConvertLongText/s2twp              554 ms          554 ms            1 bytes_per_second=3.21299M/s
-BM_ConvertLongText/s2twp_jieba        742 ms          741 ms            1 bytes_per_second=2.40096M/s
-BM_Convert/s2t_100                  0.649 ms        0.649 ms         1083 bytes_per_second=6.15628M/s
-BM_Convert/s2t_1000                  6.64 ms         6.64 ms          106 bytes_per_second=6.16118M/s
-BM_Convert/s2t_10000                 68.1 ms         68.1 ms           10 bytes_per_second=6.14608M/s
-BM_Convert/s2t_100000                 718 ms          717 ms            1 bytes_per_second=5.96785M/s
-BM_Convert/s2twp_100                 1.20 ms         1.20 ms          552 bytes_per_second=3.32407M/s
-BM_Convert/s2twp_1000                12.3 ms         12.3 ms           57 bytes_per_second=3.32311M/s
-BM_Convert/s2twp_10000                126 ms          126 ms            6 bytes_per_second=3.31205M/s
-BM_Convert/s2twp_100000              1296 ms         1296 ms            1 bytes_per_second=3.3027M/s
-BM_Convert/s2twp_jieba_100           1.51 ms         1.49 ms          495 bytes_per_second=2.67698M/s
-BM_Convert/s2twp_jieba_1000          15.0 ms         15.0 ms           48 bytes_per_second=2.72292M/s
-BM_Convert/s2twp_jieba_10000          153 ms          153 ms            5 bytes_per_second=2.73681M/s
-BM_Convert/s2twp_jieba_100000        1728 ms         1728 ms            1 bytes_per_second=2.47784M/s
-```
+詳情見 [doc/benchmark.md](doc/benchmark.md) 檔案。
 
 ## Projects using OpenCC 使用 OpenCC 的項目
 

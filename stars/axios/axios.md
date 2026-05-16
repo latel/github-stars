@@ -1,6 +1,6 @@
 ---
 project: axios
-stars: 109039
+stars: 109064
 description: |-
     Promise based HTTP client for the browser and node.js
 url: https://github.com/axios/axios
@@ -600,18 +600,9 @@ response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'));
 
 ##### axios(url[, config])
 
-`url` accepts either a string or a [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) instance. The `URL` is coerced to a string before the request is dispatched.
-
 ```js
 // Send a GET request (default method)
 axios('/user/12345');
-```
-
-```js
-// `url` may also be a URL object
-axios.get(new URL('https://api.example.com/foo'), {
-  params: { a: 1 },
-});
 ```
 
 ### Request method aliases
