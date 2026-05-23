@@ -1,6 +1,6 @@
 ---
 project: immortalwrt
-stars: 10782
+stars: 10818
 description: |-
     An opensource OpenWrt variant for mainland China users.
 url: https://github.com/immortalwrt/immortalwrt

@@ -1,6 +1,6 @@
 ---
 project: awesome-selfhosted
-stars: 292833
+stars: 294816
 description: |-
     A list of Free Software network services and web applications which can be hosted on your own servers
 url: https://github.com/awesome-selfhosted/awesome-selfhosted
@@ -1021,6 +1021,7 @@ _Related: [Games - Administrative Utilities & Control Panels](#games---administr
 - [OpenTTD](https://www.openttd.org/) - Transport tycoon simulation game. ([Source Code](https://github.com/OpenTTD/OpenTTD), [Clients](https://bananas.openttd.org/)) `GPL-2.0` `C++/Docker`
 - [piqueserver](https://github.com/piqueserver/piqueserver) - Server for openspades, the first-person shooter in a destructible voxel world. ([Clients](https://github.com/yvt/openspades)) `GPL-3.0` `Python/C++`
 - [Posio](https://github.com/abrenaut/posio) - Geography multiplayer game. `MIT` `Python`
+- [Razzia](https://github.com/Ralex91/Razzia) - Quiz game platform, designed for smaller self-hosted events (alternative to Kahoot!). `MIT` `Nodejs/Docker`
 - [Red Eclipse 2](https://www.redeclipse.net/) - Arena first-person shooter similar to Unreal Tournament. ([Source Code](https://github.com/redeclipse/base)) `Zlib/MIT/CC-BY-SA-4.0` `C/C++/deb`
 - [Scribble.rs](https://github.com/scribble-rs/scribble.rs) - A web-based pictionary game. ([Demo](https://scribblers.fly.dev)) `BSD-3-Clause` `Go/Docker`
 - [Suroi](https://suroi.io/) - An open-source 2D battle royale game inspired by surviv.io. ([Demo](https://suroi.io/), [Source Code](https://github.com/HasangerGames/suroi)) `GPL-3.0` `Nodejs`
@@ -1302,7 +1303,6 @@ _Related: [Automation](#automation), [Media Streaming](#media-streaming), [Media
 - [Reaparr](https://www.reaparr.rocks/) `⚠` - Cross-platform Plex media downloader that seamlessly adds media from other Plex servers to your own. ([Source Code](https://github.com/Reaparr/Reaparr)) `GPL-3.0` `Docker`
 - [Seerr](https://github.com/seerr-team/seerr) - Manage requests for your media library, supports Plex, Jellyfin and Emby media servers (fork of Overseerr). `MIT` `Docker/Nodejs`
 - [Sonarr](https://sonarr.tv/) - Automatic TV Shows downloader and manager for Usenet and BitTorrent. It can grab, sort and rename new episodes and automatically upgrade the quality of files already downloaded when a better quality format becomes available. ([Source Code](https://github.com/Sonarr/Sonarr)) `GPL-3.0` `C#/Docker`
-- [Spooty](https://github.com/Raiper34/spooty) `⚠` - Download tracks/playlists/albums from Spotify. It can also subscribe to a playlist or author page and download new songs upon release. `MIT` `Docker/Nodejs`
 - [TrackWatch](https://trackwatch.emlopezr.com) `⚠` - Automated music release tracker for Spotify with email notifications, discography generator, and ghost track cleaner (alternative to Release Radar). ([Source Code](https://github.com/emlopezr/trackwatch)) `MIT` `Docker`
 - [tubesync](https://github.com/meeb/tubesync) `⚠` - Syncs YouTube channels and playlists to a locally hosted media server. `AGPL-3.0` `Docker/Python`
 - [Watcharr](https://github.com/sbondCo/Watcharr) - Add and track all the shows and movies you are watching. Comes with user authentication, modern and clean UI and a very simple setup. ([Demo](https://beta.watcharr.app/)) `MIT` `Docker`
