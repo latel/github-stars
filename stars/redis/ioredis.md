@@ -1,6 +1,6 @@
 ---
 project: ioredis
-stars: 15273
+stars: 15284
 description: |-
     🚀 A robust, performance-focused, and full-featured Redis client for Node.js.
 url: https://github.com/redis/ioredis
@@ -1101,6 +1101,14 @@ cluster.get("foo", (err, res) => {
       function (times) {
         this.startupNodes = [{ port: 6790, host: '127.0.0.1' }];
         return Math.min(100 + times * 2, 2000);
+      }
+      ```
+
+    - `clusterNodeRetryStrategy`: Per-node retry strategy. By default, ioredis won't try to reconnect to a lost node and just waits for a `MOVED` error to refresh slots. If you pass a function here, it's used as the `retryStrategy` for each node — return a number to reconnect after that many ms, or anything else to drop the node from the pool. Handy for replica nodes that restart without slot changes (e.g. maintenance). Example:
+
+      ```javascript
+      function (times) {
+        return Math.min(100 * times, 2000);
       }
       ```
 

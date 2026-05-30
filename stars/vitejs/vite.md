@@ -1,6 +1,6 @@
 ---
 project: vite
-stars: 80787
+stars: 80881
 description: |-
     Next generation frontend tooling. It's fast!
 url: https://github.com/vitejs/vite
@@ -69,7 +69,7 @@ See [Contributing Guide](CONTRIBUTING.md).
 ## Sponsors
 
 <p align="center">
-  <a target="_blank" href="https://github.com/sponsors/vite">
+  <a target="_blank" href="https://github.com/sponsors/vitejs">
     <img alt="sponsors" src="https://sponsors.vite.dev/sponsors.svg">
   </a>
 </p>

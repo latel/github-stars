@@ -1,6 +1,6 @@
 ---
 project: devicons
-stars: 2730
+stars: 2732
 description: |-
     devicons - Crisp and clear logos & icons for developers. 
 url: https://github.com/vorillaz/devicons
