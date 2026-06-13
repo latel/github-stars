@@ -1,6 +1,6 @@
 ---
 project: sharp
-stars: 32289
+stars: 32331
 description: |-
     High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library.
 url: https://github.com/lovell/sharp
@@ -16,7 +16,7 @@ smaller, web-friendly JPEG, PNG, WebP, GIF and AVIF images of varying dimensions
 
 It can be used with all JavaScript runtimes
 that provide support for Node-API v9, including
-Node.js (^18.17.0 or >= 20.3.0), Deno and Bun.
+Node.js (>= 20.9.0), Deno and Bun.
 
 Resizing an image is typically 4x-5x faster than using the
 quickest ImageMagick and GraphicsMagick settings
@@ -46,30 +46,26 @@ npm install sharp
 ```
 
 ```javascript
+// ESM
+import sharp from 'sharp';
+
+// CJS
 const sharp = require('sharp');
 ```
 
-### Callback
-
 ```javascript
-sharp(inputBuffer)
-  .resize(320, 240)
+await sharp(inputBuffer)
+  .resize({ width: 320, height: 240 })
   .toFile('output.webp', (err, info) => { ... });
 ```
 
-### Promise
-
 ```javascript
-sharp('input.jpg')
-  .rotate()
-  .resize(200)
+const output = await sharp('input.jpg')
+  .autoOrient()
+  .resize({ width: 200 })
   .jpeg({ mozjpeg: true })
-  .toBuffer()
-  .then( data => { ... })
-  .catch( err => { ... });
+  .toBuffer();
 ```
-
-### Async/await
 
 ```javascript
 const semiTransparentRedPng = await sharp({
@@ -83,8 +79,6 @@ const semiTransparentRedPng = await sharp({
   .png()
   .toBuffer();
 ```
-
-### Stream
 
 ```javascript
 const roundedCorners = Buffer.from(

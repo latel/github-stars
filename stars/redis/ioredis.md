@@ -1,6 +1,6 @@
 ---
 project: ioredis
-stars: 15287
+stars: 15293
 description: |-
     🚀 A robust, performance-focused, and full-featured Redis client for Node.js.
 url: https://github.com/redis/ioredis
